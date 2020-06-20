@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9690DF4-7D8C-461F-B234-5A98D027B0F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>baitaplon</RootNamespace>
+    <AssemblyName>baitaplon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Documents\ui\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XanderUI">
+      <HintPath>..\..\..\Documents\ui\XanderUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="bangcong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bangcong.Designer.cs">
+      <DependentUpon>bangcong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chedo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chedo.Designer.cs">
+      <DependentUpon>chedo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="chucnanglist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="chucnanglist.Designer.cs">
+      <DependentUpon>chucnanglist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="danhmuclist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="danhmuclist.Designer.cs">
+      <DependentUpon>danhmuclist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmbophan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbophan.Designer.cs">
+      <DependentUpon>frmbophan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmcoban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmcoban.Designer.cs">
+      <DependentUpon>frmcoban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="i4canhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i4canhan.Designer.cs">
+      <DependentUpon>i4canhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="phongban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="phongban.Designer.cs">
+      <DependentUpon>phongban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quanlylist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlylist.Designer.cs">
+      <DependentUpon>quanlylist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="thuviec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thuviec.Designer.cs">
+      <DependentUpon>thuviec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tracuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tracuu.Designer.cs">
+      <DependentUpon>tracuu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="bangcong.resx">
+      <DependentUpon>bangcong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chedo.resx">
+      <DependentUpon>chedo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="chucnanglist.resx">
+      <DependentUpon>chucnanglist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="danhmuclist.resx">
+      <DependentUpon>danhmuclist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbophan.resx">
+      <DependentUpon>frmbophan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmcoban.resx">
+      <DependentUpon>frmcoban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="i4canhan.resx">
+      <DependentUpon>i4canhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="main.resx">
+      <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="phongban.resx">
+      <DependentUpon>phongban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="quanlylist.resx">
+      <DependentUpon>quanlylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thuviec.resx">
+      <DependentUpon>thuviec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tracuu.resx">
+      <DependentUpon>tracuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
