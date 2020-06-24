@@ -12,7 +12,7 @@ namespace baitaplon
 {
     public partial class danhmuclist : Form
     {
-        string data;
+        string data,per;
         public danhmuclist()
         {
             InitializeComponent();
@@ -29,8 +29,9 @@ namespace baitaplon
         {
           
         }
-        public void getdata(string sql)
+        public void getdata(string sql,string quyen)
         {
+            per = quyen;
             data = sql;
         }
 

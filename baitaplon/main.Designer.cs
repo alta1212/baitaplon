@@ -37,49 +37,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.xuiClock1 = new XanderUI.XUIClock();
             this.tendangnhap = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.changuser = new XanderUI.XUIButton();
+            this.exit = new XanderUI.XUIButton();
+            this.pannelmenu = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bunifuTileButton6 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.bunifuTileButton5 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton4 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton2 = new Bunifu.Framework.UI.BunifuTileButton();
             this.bunifuTileButton3 = new Bunifu.Framework.UI.BunifuTileButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.changuser = new XanderUI.XUIButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.xuiClock1 = new XanderUI.XUIClock();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.exit = new XanderUI.XUIButton();
-            this.pannelmenu = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // xuiClock1
-            // 
-            this.xuiClock1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.xuiClock1.CircleThickness = 6;
-            this.xuiClock1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.xuiClock1.DisplayFormat = XanderUI.XUIClock.HourFormat.TwentyFourHour;
-            this.xuiClock1.FilledHourColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(190)))), ((int)(((byte)(155)))));
-            this.xuiClock1.FilledMinuteColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
-            this.xuiClock1.FilledSecondColor = System.Drawing.Color.DarkOrchid;
-            this.xuiClock1.Font = new System.Drawing.Font("Impact", 15F);
-            this.xuiClock1.HexagonColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
-            this.xuiClock1.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.xuiClock1.Location = new System.Drawing.Point(1087, 92);
-            this.xuiClock1.Name = "xuiClock1";
-            this.xuiClock1.ShowAmPm = false;
-            this.xuiClock1.ShowHexagon = true;
-            this.xuiClock1.ShowMinutesCircle = true;
-            this.xuiClock1.ShowSecondsCircle = true;
-            this.xuiClock1.Size = new System.Drawing.Size(120, 130);
-            this.xuiClock1.TabIndex = 7;
-            this.xuiClock1.Text = "xuiClock1";
-            this.xuiClock1.UnfilledHourColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
-            this.xuiClock1.UnfilledMinuteColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
-            this.xuiClock1.UnfilledSecondColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
             // 
             // tendangnhap
             // 
@@ -96,14 +73,124 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.OldLace;
+            this.panel1.Controls.Add(this.bunifuTileButton6);
+            this.panel1.Controls.Add(this.bunifuTileButton5);
             this.panel1.Controls.Add(this.bunifuTileButton4);
             this.panel1.Controls.Add(this.bunifuTileButton1);
             this.panel1.Controls.Add(this.bunifuTileButton2);
             this.panel1.Controls.Add(this.bunifuTileButton3);
             this.panel1.Location = new System.Drawing.Point(30, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 349);
+            this.panel1.Size = new System.Drawing.Size(446, 505);
             this.panel1.TabIndex = 9;
+            // 
+            // changuser
+            // 
+            this.changuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.changuser.BackgroundColor = System.Drawing.Color.White;
+            this.changuser.ButtonImage = null;
+            this.changuser.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.changuser.ButtonText = "Đổi người dùng";
+            this.changuser.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.changuser.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.changuser.CornerRadius = 5;
+            this.changuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.changuser.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.changuser.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.changuser.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.changuser.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.changuser.Location = new System.Drawing.Point(1075, 674);
+            this.changuser.Name = "changuser";
+            this.changuser.Size = new System.Drawing.Size(150, 33);
+            this.changuser.TabIndex = 11;
+            this.changuser.TextColor = System.Drawing.Color.Black;
+            this.changuser.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.changuser.Click += new System.EventHandler(this.changuser_Click);
+            // 
+            // exit
+            // 
+            this.exit.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.exit.BackgroundColor = System.Drawing.Color.White;
+            this.exit.ButtonImage = null;
+            this.exit.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.exit.ButtonText = "Thoát";
+            this.exit.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.exit.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.exit.CornerRadius = 5;
+            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.exit.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.exit.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.exit.HoverTextColor = System.Drawing.Color.DarkGoldenrod;
+            this.exit.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.exit.Location = new System.Drawing.Point(1075, 726);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(150, 35);
+            this.exit.TabIndex = 1;
+            this.exit.TextColor = System.Drawing.Color.Black;
+            this.exit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // pannelmenu
+            // 
+            this.pannelmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pannelmenu.Location = new System.Drawing.Point(577, 156);
+            this.pannelmenu.Name = "pannelmenu";
+            this.pannelmenu.Size = new System.Drawing.Size(468, 349);
+            this.pannelmenu.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::baitaplon.Properties.Resources._3069537754_ef56a09c_3413_4f7d_b795_39ec530c2a7c;
+            this.pictureBox2.Location = new System.Drawing.Point(30, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(137, 123);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 12;
+            this.pictureBox2.TabStop = false;
+            // 
+            // bunifuTileButton6
+            // 
+            this.bunifuTileButton6.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuTileButton6.color = System.Drawing.Color.SeaGreen;
+            this.bunifuTileButton6.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.bunifuTileButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton6.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton6.Image = global::baitaplon.Properties.Resources._1200x630wa_removebg_preview_removebg_preview1;
+            this.bunifuTileButton6.ImagePosition = 20;
+            this.bunifuTileButton6.ImageZoom = 50;
+            this.bunifuTileButton6.LabelPosition = 41;
+            this.bunifuTileButton6.LabelText = "Tile 1";
+            this.bunifuTileButton6.Location = new System.Drawing.Point(10, 350);
+            this.bunifuTileButton6.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton6.Name = "bunifuTileButton6";
+            this.bunifuTileButton6.Size = new System.Drawing.Size(180, 149);
+            this.bunifuTileButton6.TabIndex = 5;
+            // 
+            // bunifuTileButton5
+            // 
+            this.bunifuTileButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuTileButton5.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuTileButton5.color = System.Drawing.Color.SeaGreen;
+            this.bunifuTileButton5.colorActive = System.Drawing.Color.MediumSeaGreen;
+            this.bunifuTileButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
+            this.bunifuTileButton5.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton5.Image = global::baitaplon.Properties.Resources.BCnhanvien;
+            this.bunifuTileButton5.ImagePosition = 20;
+            this.bunifuTileButton5.ImageZoom = 50;
+            this.bunifuTileButton5.LabelPosition = 41;
+            this.bunifuTileButton5.LabelText = "Tài khoản";
+            this.bunifuTileButton5.Location = new System.Drawing.Point(243, 350);
+            this.bunifuTileButton5.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton5.Name = "bunifuTileButton5";
+            this.bunifuTileButton5.Size = new System.Drawing.Size(191, 149);
+            this.bunifuTileButton5.TabIndex = 4;
+            this.bunifuTileButton5.Click += new System.EventHandler(this.bunifuTileButton5_Click);
             // 
             // bunifuTileButton4
             // 
@@ -133,7 +220,7 @@
             this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuTileButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
             this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
-            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
+            this.bunifuTileButton1.Image = global::baitaplon.Properties.Resources.toppng_com_list_icon_list_icon_white_918x980;
             this.bunifuTileButton1.ImagePosition = 20;
             this.bunifuTileButton1.ImageZoom = 50;
             this.bunifuTileButton1.LabelPosition = 41;
@@ -184,38 +271,6 @@
             this.bunifuTileButton3.TabIndex = 2;
             this.bunifuTileButton3.Click += new System.EventHandler(this.bunifuTileButton3_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(30, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(137, 123);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
-            // 
-            // changuser
-            // 
-            this.changuser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.changuser.BackgroundColor = System.Drawing.Color.White;
-            this.changuser.ButtonImage = null;
-            this.changuser.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.changuser.ButtonText = "Đổi người dùng";
-            this.changuser.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.changuser.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.changuser.CornerRadius = 5;
-            this.changuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.changuser.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.changuser.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.changuser.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.changuser.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.changuser.Location = new System.Drawing.Point(1075, 674);
-            this.changuser.Name = "changuser";
-            this.changuser.Size = new System.Drawing.Size(150, 33);
-            this.changuser.TabIndex = 11;
-            this.changuser.TextColor = System.Drawing.Color.Black;
-            this.changuser.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.changuser.Click += new System.EventHandler(this.changuser_Click);
-            // 
             // bunifuImageButton1
             // 
             this.bunifuImageButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -231,6 +286,34 @@
             this.bunifuImageButton1.Zoom = 10;
             this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
+            // xuiClock1
+            // 
+            this.xuiClock1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.xuiClock1.BackgroundImage = global::baitaplon.Properties.Resources._1200x630wa_removebg_preview_removebg_preview;
+            this.xuiClock1.CircleThickness = 6;
+            this.xuiClock1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.xuiClock1.DisplayFormat = XanderUI.XUIClock.HourFormat.TwentyFourHour;
+            this.xuiClock1.FilledHourColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(190)))), ((int)(((byte)(155)))));
+            this.xuiClock1.FilledMinuteColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
+            this.xuiClock1.FilledSecondColor = System.Drawing.Color.DarkOrchid;
+            this.xuiClock1.Font = new System.Drawing.Font("Impact", 15F);
+            this.xuiClock1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.xuiClock1.HexagonColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
+            this.xuiClock1.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.xuiClock1.Location = new System.Drawing.Point(1087, 92);
+            this.xuiClock1.Name = "xuiClock1";
+            this.xuiClock1.ShowAmPm = false;
+            this.xuiClock1.ShowHexagon = true;
+            this.xuiClock1.ShowMinutesCircle = true;
+            this.xuiClock1.ShowSecondsCircle = true;
+            this.xuiClock1.Size = new System.Drawing.Size(120, 130);
+            this.xuiClock1.TabIndex = 7;
+            this.xuiClock1.Text = "xuiClock1";
+            this.xuiClock1.UnfilledHourColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(70)))), ((int)(((byte)(85)))));
+            this.xuiClock1.UnfilledMinuteColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
+            this.xuiClock1.UnfilledSecondColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(70)))));
+            this.xuiClock1.Click += new System.EventHandler(this.xuiClock1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -240,39 +323,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // exit
-            // 
-            this.exit.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.exit.BackgroundColor = System.Drawing.Color.White;
-            this.exit.ButtonImage = null;
-            this.exit.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.exit.ButtonText = "Thoát";
-            this.exit.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.exit.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.exit.CornerRadius = 5;
-            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.exit.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.exit.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.exit.HoverTextColor = System.Drawing.Color.DarkGoldenrod;
-            this.exit.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.exit.Location = new System.Drawing.Point(1075, 726);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(150, 35);
-            this.exit.TabIndex = 1;
-            this.exit.TextColor = System.Drawing.Color.Black;
-            this.exit.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
-            // 
-            // pannelmenu
-            // 
-            this.pannelmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pannelmenu.Location = new System.Drawing.Point(577, 156);
-            this.pannelmenu.Name = "pannelmenu";
-            this.pannelmenu.Size = new System.Drawing.Size(468, 349);
-            this.pannelmenu.TabIndex = 4;
             // 
             // main
             // 
@@ -320,5 +370,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pannelmenu;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton5;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton6;
     }
 }

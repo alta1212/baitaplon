@@ -15,12 +15,15 @@ namespace baitaplon
     {
         SqlConnection cont;
         string data;
+        string perm,tendn;
         public main()
         {
             InitializeComponent();
         }
-        public void getdata(string text)
+        public void getdata(string text,string per,string ten)
         {
+            tendn = ten;
+            perm = per;
             data = text;
             ketNoi();
         }
@@ -55,13 +58,14 @@ namespace baitaplon
         private void exit_Click(object sender, EventArgs e)
         {
             Close();
+            Application.Exit();
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
             
             danhmuclist l = new danhmuclist();
-            l.getdata(data);
+            l.getdata(data,perm);
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;
@@ -74,7 +78,7 @@ namespace baitaplon
         private void bunifuTileButton3_Click(object sender, EventArgs e)
         {
             chucnanglist l = new chucnanglist();
-            l.getdata(data);
+            l.getdata(data,perm);
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;
@@ -85,7 +89,23 @@ namespace baitaplon
         private void bunifuTileButton4_Click(object sender, EventArgs e)
         {
             quanlylist l = new quanlylist();
-            l.getdata(data);
+            l.getdata(data,perm);
+            pannelmenu.Controls.Clear();
+            l.TopLevel = false;
+            l.Dock = DockStyle.Fill;
+            pannelmenu.Controls.Add(l);
+            l.Show();
+        }
+
+        private void xuiClock1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bây giờ là : " +DateTime.Now);
+        }
+
+        private void bunifuTileButton5_Click(object sender, EventArgs e)
+        {
+            qltklist l = new qltklist();
+            l.getdata(data,perm,tendn);
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;
@@ -93,4 +113,4 @@ namespace baitaplon
             l.Show();
         }
     }
-}
+} 

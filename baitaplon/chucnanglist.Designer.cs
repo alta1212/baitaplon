@@ -160,6 +160,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "chucnanglist";
             this.Text = "chucnanglist";
+            this.Load += new System.EventHandler(this.chucnanglist_Load);
             this.ResumeLayout(false);
 
         }

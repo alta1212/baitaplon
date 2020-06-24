@@ -99,6 +99,7 @@
             this.xuiButton3.TabIndex = 3;
             this.xuiButton3.TextColor = System.Drawing.Color.Black;
             this.xuiButton3.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton3.Click += new System.EventHandler(this.xuiButton3_Click_1);
             // 
             // xuiButton4
             // 

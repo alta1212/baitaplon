@@ -20,6 +20,10 @@ namespace baitaplon
         }
         string data;
         SqlConnection cont;
+        SqlCommand comd;
+        SqlDataReader read;
+        DataTable dt;
+        SqlDataAdapter sqladt;
 
         void ketNoi()
         {
@@ -35,16 +39,7 @@ namespace baitaplon
             if (cont.State == ConnectionState.Open)
                 cont.Close();
         }
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-     (
-         int nLeftRect,     // x-coordinate of upper-left corner
-         int nTopRect,      // y-coordinate of upper-left corner
-         int nRightRect,    // x-coordinate of lower-right corner
-         int nBottomRect,   // y-coordinate of lower-right corner
-         int nWidthEllipse, // height of ellipse
-         int nHeightEllipse // width of ellipse
-     );
+      
    
 
 
@@ -60,7 +55,7 @@ namespace baitaplon
             {
                 txtid.Text = baitaplon.Properties.Settings.Default.id;
                 txtpass.Text = baitaplon.Properties.Settings.Default.pass;
-
+                ch.Checked = baitaplon.Properties.Settings.Default.check;
             }
             else
             {
@@ -71,21 +66,34 @@ namespace baitaplon
 
         private void button1_Click(object sender, EventArgs e)
         {
-           try
+            bunifuFlatButton1_Click(sender,e);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            try
             {
 
                 data = string.Format(@"Data Source=(local);Initial Catalog=qlns;Persist Security Info=True;User ID={0};Password={1}", txtid.Text, txtpass.Text);
                 ketNoi();
-
+     
                 baitaplon.Properties.Settings.Default.id = txtid.Text;
-                baitaplon.Properties.Settings.Default.pass = txtpass.Text;
-                baitaplon.Properties.Settings.Default.Save();
+                baitaplon.Properties.Settings.Default.pass = txtpass.Text;         
                 baitaplon.Properties.Settings.Default.check = ch.Checked;
+                baitaplon.Properties.Settings.Default.Save();
+
                 Hide();
                 main l = new main();
-                l.getdata(data);
+                l.getdata(data,check(),txtid.Text);
                 l.ShowDialog();
                 Close();
+                
 
             }
            catch
@@ -94,9 +102,33 @@ namespace baitaplon
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            Close();
+      
+        }
+        public string check()
+        {
+            int i = 0;
+            string sql = "SELECT 	roles.[name] as role_name,	members.[name] as user_name FROM sys.database_role_members     JOIN sys.database_principals roles ON database_role_members.role_principal_id = roles.principal_id       JOIN sys.database_principals members ON database_role_members.member_principal_id = members.principal_id	ORDER BY 	roles.[name],	members.[name]";
+            sqladt = new SqlDataAdapter(sql,cont);
+            dt = new DataTable();
+            sqladt.Fill(dt);
+            while (i<dt.Rows.Count)
+            {   
+                if(dt.Rows[i][0].ToString() == "quantri" && dt.Rows[i][1].ToString() == txtid.Text)
+                {
+
+                    return dt.Rows[i][0].ToString();
+                }
+                else if (dt.Rows[i][0].ToString() == "nguoidung" && dt.Rows[i][1].ToString() == txtid.Text)
+                {
+
+                    return dt.Rows[i][0].ToString();
+                }
+
+                i++;
+            }
+            return "caonhat";
         }
     }
 }

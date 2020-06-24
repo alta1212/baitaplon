@@ -13,8 +13,10 @@ namespace baitaplon
     public partial class quanlylist : Form
     {
         string data;
-        public void getdata(string chuoi)
+        string quyen;
+        public void getdata(string chuoi,string per)
         {
+            quyen = per;
             data = chuoi;
             Clipboard.SetText(data);
         }
@@ -45,6 +47,13 @@ namespace baitaplon
         private void xuiButton4_Click(object sender, EventArgs e)
         {
             frmbophan k = new frmbophan();
+            k.getdata(data);
+            k.ShowDialog();
+        }
+
+        private void xuiButton3_Click_1(object sender, EventArgs e)
+        {
+            bangluong k = new bangluong();
             k.getdata(data);
             k.ShowDialog();
         }

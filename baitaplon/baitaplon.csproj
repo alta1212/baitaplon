@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -61,6 +76,12 @@
     <Compile Include="bangcong.Designer.cs">
       <DependentUpon>bangcong.cs</DependentUpon>
     </Compile>
+    <Compile Include="bangluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bangluong.Designer.cs">
+      <DependentUpon>bangluong.cs</DependentUpon>
+    </Compile>
     <Compile Include="chedo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +94,23 @@
     <Compile Include="chucnanglist.Designer.cs">
       <DependentUpon>chucnanglist.cs</DependentUpon>
     </Compile>
+    <Compile Include="dangky.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dangky.Designer.cs">
+      <DependentUpon>dangky.cs</DependentUpon>
+    </Compile>
     <Compile Include="danhmuclist.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="danhmuclist.Designer.cs">
       <DependentUpon>danhmuclist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doipass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doipass.Designer.cs">
+      <DependentUpon>doipass.cs</DependentUpon>
     </Compile>
     <Compile Include="frmbophan.cs">
       <SubType>Form</SubType>
@@ -117,6 +150,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qltklist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="qltklist.Designer.cs">
+      <DependentUpon>qltklist.cs</DependentUpon>
+    </Compile>
     <Compile Include="quanlylist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,14 +177,23 @@
     <EmbeddedResource Include="bangcong.resx">
       <DependentUpon>bangcong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="bangluong.resx">
+      <DependentUpon>bangluong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="chedo.resx">
       <DependentUpon>chedo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="chucnanglist.resx">
       <DependentUpon>chucnanglist.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dangky.resx">
+      <DependentUpon>dangky.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="danhmuclist.resx">
       <DependentUpon>danhmuclist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doipass.resx">
+      <DependentUpon>doipass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmbophan.resx">
       <DependentUpon>frmbophan.cs</DependentUpon>
@@ -173,7 +221,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="qltklist.resx">
+      <DependentUpon>qltklist.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="quanlylist.resx">
       <DependentUpon>quanlylist.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +247,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toppng.com-list-icon-list-icon-white-918x980.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3069537754_ef56a09c-3413-4f7d-b795-39ec530c2a7c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-check-mark-x-mark-computer-icons-clip-art-cross-heart-5b5ea78ab34c28.1767412715329299307344 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200x630wa-removebg-preview-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BCnhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1269515091_keepassx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Changepass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1269448502_administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tongiao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

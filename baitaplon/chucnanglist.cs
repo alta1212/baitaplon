@@ -12,13 +12,14 @@ namespace baitaplon
 {
     public partial class chucnanglist : Form
     {
-        string data;
+        string data,per;
         public chucnanglist()
         {
             InitializeComponent();
         }
-        public void getdata(string chuoi)
+        public void getdata(string chuoi,string quyen)
         {
+            per = quyen;
             data = chuoi;
             Clipboard.SetText(data);
         }
@@ -45,6 +46,11 @@ namespace baitaplon
             tracuu l = new tracuu();
             l.getdata(data);
             l.ShowDialog();
+        }
+
+        private void chucnanglist_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
