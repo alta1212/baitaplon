@@ -82,6 +82,7 @@
     <Compile Include="bangluong.Designer.cs">
       <DependentUpon>bangluong.cs</DependentUpon>
     </Compile>
+    <Compile Include="check.cs" />
     <Compile Include="chedo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +287,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1270361629_administrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-macbook-pro-font-awesome-computer-icons-computer-m-computer-icon-5abf12a52954a8.6155517315224715891693 %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

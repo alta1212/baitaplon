@@ -19,6 +19,7 @@ namespace baitaplon
         SqlDataReader read;
         DataTable dt;
         SqlDataAdapter adap;
+        check ck = new check();
         public void getdata(string chuoi)
         {
             data = chuoi;
@@ -51,29 +52,10 @@ namespace baitaplon
 
         private void phongban_Load(object sender, EventArgs e)
         {
-            loaddta("select * from tblphongban");
-            loadcombobox(comboBox1, "select * from TblBoPhan", 0);
+            ck.loaddg("select * from tblphongban",dataGridView1);
+            ck.loadcbb(comboBox1, 0, "select * from TblBoPhan");
         }
-        void loaddta(string k)
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter(k, data);
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-            ngatketNoi();
-        }
-       void loadcombobox(ComboBox cb, string strselect, byte chiso)
-        {
-            ketNoi();
-            comd = new SqlCommand(strselect, cont);
-            read = comd.ExecuteReader();
-            while (read.Read())
-            {
-                comboBox1.Items.Add(read[chiso].ToString());
-            }
-            ngatketNoi();
-        }
+     
 
         private void xuiButton1_Click(object sender, EventArgs e)
         {
@@ -87,14 +69,15 @@ namespace baitaplon
         }
 
         private void xuiButton2_Click(object sender, EventArgs e)
-        {
+        {if(ck.checkmatrung(textBox2.Text, "TblPhongBan", "MaPhong"))
             try
             {
+                    errorProvider1.Clear();
                 ketNoi();
                     string insert = "insert into TblPhongBan values('" + comboBox1.Text + "',N'" + textBox2.Text + "',N'" + textBox3.Text + "',N'" + dateTimePicker1.Text + "',N'" + textBox5.Text + "')";
                     comd = new SqlCommand(insert, cont);
                     comd.ExecuteNonQuery();
-                    loaddta("select * from tblphongban");
+                ck.loaddg("select * from tblphongban", dataGridView1);
                 MessageBox.Show("Xong");
                 ngatketNoi();
             }
@@ -102,6 +85,10 @@ namespace baitaplon
             {
                 MessageBox.Show(p.Message);
             }
+            else
+            {
+                errorProvider1.SetError(textBox2, "mã phòng đã tồn tại");
+            }    
         }
 
         private void xuiButton3_Click(object sender, EventArgs e)
@@ -113,7 +100,7 @@ namespace baitaplon
                 Clipboard.SetText(update);
                 comd = new SqlCommand(update, cont);
                 comd.ExecuteNonQuery();
-                loaddta("select * from tblphongban");
+                ck.loaddg("select * from tblphongban", dataGridView1);
                 MessageBox.Show("Sửa thành công");
                 ngatketNoi();
             }
@@ -133,7 +120,7 @@ namespace baitaplon
                 {
                     comd = new SqlCommand(del, cont);
                     comd.ExecuteNonQuery();
-                    loaddta("select * from tblphongban");
+                    ck.loaddg("select * from tblphongban", dataGridView1);
                     MessageBox.Show("xoá thành công");
                 }
                 ngatketNoi();

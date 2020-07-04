@@ -30,6 +30,7 @@ namespace baitaplon
         SqlDataReader read;
         DataTable dt;
         SqlDataAdapter adap;
+        check ck = new check();
         public void getdata(string chuoi)
         {
             data = chuoi;
@@ -80,26 +81,43 @@ namespace baitaplon
         {
             try
             {
-                ketNoi();
-                string insert = "insert into TblTTNVCoBan values(N'" + cbbmbp.Text + "',N'" + cbbmaphong.Text + "',N'" + txtmnv.Text + "',N'" + txthoten.Text + "',N'" + cbbluong.Text + "',N'" + datebirth.Text + "',N'" + cbbgioitinh.Text + "',N'" + txthonnhan.Text + "',N'" + txtcmt.Text + "',N'" + txtnoicap.Text + "',N'" + txtchucvu.Text + "',N'" + txthd.Text + "',N'" + txttime.Text + "',N'" + datengayvao.Text + "',N'" + datengayra.Text + "',N'" + txtghichu.Text + "')";
-               
-                comd = new SqlCommand(insert, cont);
-                comd.ExecuteNonQuery();
-                loaddatagirl();
-                MessageBox.Show("Đã thêm");
-                foreach (Control ctr in this.groupBox1.Controls)
-                {
-                    if ((ctr is TextBox) || (ctr is DateTimePicker) || (ctr is ComboBox))
-                    {
-                        ctr.Text = "";
-                    }
-                }
-                ngatketNoi();
-            }
-            catch
+            if(ck.checkmatrung(txtmnv.Text, "TblTTNVCoBan","manv"))
             {
-
+                errorProvider1.Clear();
+                try
+                { 
+                    ketNoi();
+                    string insert = "insert into TblTTNVCoBan values(N'" + cbbmbp.Text + "',N'" + cbbmaphong.Text + "',N'" + txtmnv.Text + "',N'" + txthoten.Text + "',N'" + cbbluong.Text + "',N'" + datebirth.Text + "',N'" + cbbgioitinh.Text + "',N'" + txthonnhan.Text + "',N'" + txtcmt.Text + "',N'" + txtnoicap.Text + "',N'" + txtchucvu.Text + "',N'" + txthd.Text + "',N'" + txttime.Text + "',N'" + datengayvao.Text + "',N'" + datengayra.Text + "',N'" + txtghichu.Text + "')";
+               
+                    comd = new SqlCommand(insert, cont);
+                    comd.ExecuteNonQuery();
+                    loaddatagirl();
+                    MessageBox.Show("Đã thêm");
+                    foreach (Control ctr in this.groupBox1.Controls)
+                    {
+                        if ((ctr is TextBox) || (ctr is DateTimePicker) || (ctr is ComboBox))
+                        {
+                            ctr.Text = "";
+                        }
+                    }
+                    ngatketNoi();
+                }
+                catch(Exception p)
+                {
+                    MessageBox.Show(p.Message);
+                }
+            }    
+            else
+            {
+                errorProvider1.SetError(txtmnv, "Mã nhân viên đã tồn tại");
+            } 
             }
+            catch(Exception p)
+            {
+                MessageBox.Show(p.Message);
+            }
+   
+
         }
         public void FillCombo(string sql,ComboBox com)
         {
@@ -199,6 +217,19 @@ namespace baitaplon
         private void dataGridView1_Leave(object sender, EventArgs e)
         {
             txtmnv.Enabled = true;
+        }
+
+        private void txtmnv_Leave(object sender, EventArgs e)
+        {
+            if (!ck.checkmatrung(txtmnv.Text, "TblTTNVCoBan","manv"))   
+            {
+                errorProvider1.SetError(txtmnv, "Mã nhân viên đã tồn tại");
+
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }    
         }
     }
 }

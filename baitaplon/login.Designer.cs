@@ -129,7 +129,8 @@
             // 
             // ch
             // 
-            this.ch.CheckboxCheckColor = System.Drawing.Color.White;
+            this.ch.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ch.CheckboxCheckColor = System.Drawing.Color.Black;
             this.ch.CheckboxColor = System.Drawing.Color.White;
             this.ch.CheckboxHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(55)))), ((int)(((byte)(98)))));
             this.ch.CheckboxStyle = XanderUI.XUICheckBox.Style.Material;

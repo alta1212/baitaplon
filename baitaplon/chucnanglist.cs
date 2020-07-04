@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,20 +26,16 @@ namespace baitaplon
         }
         private void xuiButton2_MouseHover(object sender, EventArgs e)
         {
-            xuiButton4.Visible = true;
-            xuiButton5.Visible = true;
         }
 
         private void xuiButton3_MouseHover(object sender, EventArgs e)
         {
-            xuiButton4.Visible = false;
-            xuiButton5.Visible = false;
+          
         }
 
         private void xuiButton1_MouseHover(object sender, EventArgs e)
         {
-            xuiButton4.Visible = false;
-            xuiButton5.Visible = false;
+          
         }
 
         private void xuiButton1_Click(object sender, EventArgs e)
@@ -46,6 +43,16 @@ namespace baitaplon
             tracuu l = new tracuu();
             l.getdata(data);
             l.ShowDialog();
+        }
+
+        private void xuiButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xuiButton3_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.facebook.com/anhlatuananh.android");
         }
 
         private void chucnanglist_Load(object sender, EventArgs e)

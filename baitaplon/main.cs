@@ -57,8 +57,9 @@ namespace baitaplon
 
         private void exit_Click(object sender, EventArgs e)
         {
-            Close();
-            Application.Exit();
+          
+                   Application.Exit();
+
         }
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
@@ -100,6 +101,17 @@ namespace baitaplon
         private void xuiClock1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Bây giờ là : " +DateTime.Now);
+        }
+
+        private void main_Load(object sender, EventArgs e)
+        {
+            label1.Text = tendn;
+          
+        }
+
+        private void bunifuTileButton2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)

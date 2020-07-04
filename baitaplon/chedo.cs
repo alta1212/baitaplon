@@ -17,6 +17,7 @@ namespace baitaplon
         {
             InitializeComponent();
         }
+        check ck = new check();
         string data;
         SqlConnection cont;
         SqlCommand comd;
@@ -55,12 +56,14 @@ namespace baitaplon
             ngatketNoi();
 
         }
+            
         private void chedo_Load(object sender, EventArgs e)
         {
+            ck.loadcbb(comboBox1,0, "select * from TblBangLuongCTy");
             FillCombo("select manv from TblTTNVCoBan where manv in(select MaNV from TblCongKhoiDieuHanh where manv in (select manv from TblBangLuongCTy where manv not in (select manv from TblSoBH)))", cbbmnv);
             FillCombo("select manv from TblTTNVCoBan where manv in(select MaNV from TblCongKhoiDieuHanh where manv not in (select manv from TblThaiSan))", cbbmnv2);
-            loaddatagirl("select * from TblSoBH", databaohiem);
-            loaddatagirl("select * from TblThaiSan", datathaisan);
+           ck.loaddg("select * from TblSoBH", databaohiem);
+            ck.loaddg("select * from TblThaiSan", datathaisan);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -78,32 +81,30 @@ namespace baitaplon
                 }
             }
         }
-        void loaddatagirl(string sql,DataGridView d)
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter(sql, data);
-            adap.Fill(dt);
-            d.DataSource = dt;
-            ngatketNoi();
-        }
+      
         private void button2_Click(object sender, EventArgs e)
         {
+            if(ck.checkmatrung(cbbmnv.Text, "TblSoBH", "MaNV"))
             try
             {
+                errorProvider1.Clear();
                 ketNoi();
 
-                string insert = "insert into TblSoBH values(N'" + cbbmnv.Text + "',N'" + txtmaluong.Text + "',N'" + txtmabh.Text + "',N'" + datengaycap.Text + "',N'" + txtnoicap.Text + "',N'" + txtghichu.Text + "')";
+                string insert = "insert into TblSoBH values(N'" + cbbmnv.Text + "',N'" + comboBox1.Text + "',N'" + txtmabh.Text + "',N'" + datengaycap.Text + "',N'" + txtnoicap.Text + "',N'" + txtghichu.Text + "')";
                 comd = new SqlCommand(insert,cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl("select * from TblSoBH", databaohiem);
+                ck.loaddg("select * from TblSoBH", databaohiem);
                 MessageBox.Show("Xong");
                 ngatketNoi();
             }
             catch
             {
-                MessageBox.Show("Dữ liệu đầu vào không đúng");
+                MessageBox.Show("dữ liệu đầu vào không đúng");
             }
+            else
+            {
+                errorProvider1.SetError(cbbmnv, "Mã nhân viên đã tồn tại");
+            }    
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,7 +116,7 @@ namespace baitaplon
                 Clipboard.SetText(update);
                 comd = new SqlCommand(update,cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl("select * from TblSoBH", databaohiem);
+                ck.loaddg("select * from TblSoBH", databaohiem);
                 MessageBox.Show("Xong");
                 ngatketNoi();
             }
@@ -138,7 +139,7 @@ namespace baitaplon
                     comd.ExecuteNonQuery();
                     ngatketNoi();
                     MessageBox.Show("Đã xoá");
-                    loaddatagirl("select * from TblSoBH", databaohiem);
+                    ck.loaddg("select * from TblSoBH", databaohiem);
                 }
                 catch
                 {
@@ -154,7 +155,7 @@ namespace baitaplon
             {
                 int i = e.RowIndex;
                 cbbmnv.Text = databaohiem.Rows[i].Cells[0].Value.ToString();
-                txtmaluong.Text = databaohiem.Rows[i].Cells[1].Value.ToString();
+                comboBox1.Text = databaohiem.Rows[i].Cells[1].Value.ToString();
                 txtmabh.Text = databaohiem.Rows[i].Cells[2].Value.ToString();
                 datengaycap.Text = databaohiem.Rows[i].Cells[3].Value.ToString();
                 txtnoicap.Text = databaohiem.Rows[i].Cells[4].Value.ToString();
@@ -196,7 +197,7 @@ namespace baitaplon
                 string insert = "insert into TblThaiSan values(N'" + txtmabp.Text + "',N'" + txtmaphong.Text + "',N'" + cbbmnv2.Text + "',N'" + txthoten.Text + "',N'" + datengaysinh.Text + "',N'" + datengayves.Text + "',N'" + datengayve.Text + "',N'" + datengaydilam.Text + "',N'" + txttrocapct.Text + "',N'" + txtghichu2.Text + "')";
                 comd = new SqlCommand(insert,cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl("select * from TblThaiSan", datathaisan);
+                ck.loaddg("select * from TblThaiSan", datathaisan);
                 MessageBox.Show("xong");
                 ngatketNoi();
             }
@@ -227,7 +228,7 @@ namespace baitaplon
                 string insert = "update TblThaiSan set mabophan=N'"+txtmabp.Text+"',maphong=N'"+txtmaphong.Text+"',hoten=N'"+txthoten.Text+"', ngaysinh='"+datengaysinh.Value+"' ,ngayvesom='"+datengayve.Value+"',ngaynghisinh='"+ datengayve.Value+"',ngaydilam='"+datengaydilam.Value+"',trocapcongty='"+txtnoicap.Text+"',ghichu='"+txtghichu2.Text+"'";
                 comd = new SqlCommand(insert, cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl("select * from TblThaiSan", datathaisan);
+                ck.loaddg("select * from TblThaiSan", datathaisan);
                 MessageBox.Show("xong");
                 ngatketNoi();
             }
@@ -245,7 +246,7 @@ namespace baitaplon
             string sql = "delete TblThaiSan where manv='"+cbbmnv.Text+"'";
             comd = new SqlCommand(sql, cont);
             comd.ExecuteNonQuery();
-            loaddatagirl("select * from TblThaiSan", datathaisan);
+            ck.loaddg("select * from TblThaiSan", datathaisan);
             MessageBox.Show("xong");
             ngatketNoi();
         }

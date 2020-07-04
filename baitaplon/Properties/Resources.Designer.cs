@@ -103,6 +103,16 @@ namespace baitaplon.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1270361629_administrator {
+            get {
+                object obj = ResourceManager.GetObject("1270361629_administrator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _3069537754_ef56a09c_3413_4f7d_b795_39ec530c2a7c {
             get {
                 object obj = ResourceManager.GetObject("3069537754_ef56a09c-3413-4f7d-b795-39ec530c2a7c", resourceCulture);
@@ -137,6 +147,17 @@ namespace baitaplon.Properties {
             get {
                 object obj = ResourceManager.GetObject("kisspng-check-mark-x-mark-computer-icons-clip-art-cross-heart-5b5ea78ab34c28.1767" +
                         "412715329299307344 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_macbook_pro_font_awesome_computer_icons_computer_m_computer_icon_5abf12a52954a8_6155517315224715891693__1_ {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-macbook-pro-font-awesome-computer-icons-computer-m-computer-icon-5abf12a5" +
+                        "2954a8.6155517315224715891693 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

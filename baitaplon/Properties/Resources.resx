@@ -121,6 +121,12 @@
   <data name="1200x630wa-removebg-preview-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1200x630wa-removebg-preview-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1270361629_administrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1270361629_administrator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BCnhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BCnhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1269515091_keepassx" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1269515091_keepassx.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,13 +145,13 @@
   <data name="kisspng-check-mark-x-mark-computer-icons-clip-art-cross-heart-5b5ea78ab34c28.1767412715329299307344 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-check-mark-x-mark-computer-icons-clip-art-cross-heart-5b5ea78ab34c28.1767412715329299307344 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BCnhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BCnhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tongiao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tongiao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1269448502_administrator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1269448502_administrator.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tongiao" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tongiao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kisspng-macbook-pro-font-awesome-computer-icons-computer-m-computer-icon-5abf12a52954a8.6155517315224715891693 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-macbook-pro-font-awesome-computer-icons-computer-m-computer-icon-5abf12a52954a8.6155517315224715891693 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

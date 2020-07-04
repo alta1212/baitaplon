@@ -24,6 +24,7 @@ namespace baitaplon
         SqlDataReader read;
         DataTable dt;
         SqlDataAdapter adap;
+        check ck = new check();
         public void getdata(string chuoi)
         {
             data = chuoi;
@@ -42,27 +43,8 @@ namespace baitaplon
             if (cont.State == ConnectionState.Open)
                 cont.Close();
         }
-        void loaddtgv()
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter("select * from TblTTCaNhan", data);
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-            ngatketNoi();
-        }
-        void loadmnv()
-        {
-            ketNoi();
-            comd = new SqlCommand("select * from TblTTNVCoBan", cont);
-            read = comd.ExecuteReader();
-            while (read.Read())
-            {
-                cbbmnv.Items.Add(read[2].ToString());
-            }
 
-            ngatketNoi();
-        }
+     
         private void button4_Click(object sender, EventArgs e)
         {
             Close();
@@ -70,8 +52,8 @@ namespace baitaplon
 
         private void i4canhan_Load(object sender, EventArgs e)
         {
-            loaddtgv();
-            loadmnv();
+            ck.loaddg("select * from TblTTCaNhan", dataGridView1);
+            ck.loadcbb(cbbmnv,2, "select * from TblTTNVCoBan");
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -125,7 +107,7 @@ namespace baitaplon
                         ctr.Text = "";
                     }
                 }
-                loaddtgv();
+                ck.loaddg("select * from TblTTCaNhan", dataGridView1);
                 MessageBox.Show("xong");
                 ngatketNoi();
                 

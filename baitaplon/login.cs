@@ -77,17 +77,18 @@ namespace baitaplon
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
+            Properties.Settings.Default.id = txtid.Text;
+            Properties.Settings.Default.pass = txtpass.Text;
+            Properties.Settings.Default.check = ch.Checked;
+            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Upgrade();
+            Properties.Settings.Default.Save();
+         
             try
             {
 
                 data = string.Format(@"Data Source=(local);Initial Catalog=qlns;Persist Security Info=True;User ID={0};Password={1}", txtid.Text, txtpass.Text);
                 ketNoi();
-     
-                baitaplon.Properties.Settings.Default.id = txtid.Text;
-                baitaplon.Properties.Settings.Default.pass = txtpass.Text;         
-                baitaplon.Properties.Settings.Default.check = ch.Checked;
-                baitaplon.Properties.Settings.Default.Save();
-
                 Hide();
                 main l = new main();
                 l.getdata(data,check(),txtid.Text);

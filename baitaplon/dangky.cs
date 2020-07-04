@@ -60,29 +60,37 @@ namespace baitaplon
         {
             ketNoi();
             string sql;
-            if(textBox2.Text!=textBox3.Text)
+            try
             {
-                MessageBox.Show("mật khẩu xác nhận không đúng");
-            }    
-            else if(textBox2.Text=="")
-            {
-                MessageBox.Show("Vui lòng điền mật khẩu");
-            }    
-            else
-            {
-                if(bunifuDropdown1.selectedIndex==1)
+                if(textBox2.Text!=textBox3.Text)
                 {
-                    sql =string.Format("Exec sp_addlogin {0},'{1}' Exec sp_adduser {0},{0} Exec sp_addrolemember quantri, {0}",textBox1.Text,textBox2.Text);
-                 
-                }   
+                    MessageBox.Show("mật khẩu xác nhận không đúng");
+                }    
+                else if(textBox2.Text=="")
+                {
+                    MessageBox.Show("Vui lòng điền mật khẩu");
+                }    
                 else
                 {
-                    sql = string.Format("Exec sp_addlogin {0},'{1}' Exec sp_adduser {0},{0} Exec sp_addrolemember nguoidung, {0}", textBox1.Text, textBox2.Text);
-                }
-                comd = new SqlCommand(sql,cont);
-                comd.ExecuteNonQuery();
-                MessageBox.Show("Đã thêm người dùng");
-            }    
+                    if(bunifuDropdown1.selectedIndex==1)
+                    {
+                        sql =string.Format("Exec sp_addlogin {0},'{1}' Exec sp_adduser {0},{0} Exec sp_addrolemember quantri, {0}",textBox1.Text,textBox2.Text);
+                 
+                    }   
+                    else
+                    {
+                        sql = string.Format("Exec sp_addlogin {0},'{1}' Exec sp_adduser {0},{0} Exec sp_addrolemember nguoidung, {0}", textBox1.Text, textBox2.Text);
+                    }
+                    comd = new SqlCommand(sql,cont);
+                    comd.ExecuteNonQuery();
+                    MessageBox.Show("Đã thêm người dùng");
+                }  
+            }
+            catch
+            {
+                MessageBox.Show("Tên tài khoản đã có người sử dụng !");
+            }
+  
             ngatketNoi();
         }
 

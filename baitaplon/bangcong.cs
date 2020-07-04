@@ -13,6 +13,7 @@ namespace baitaplon
 {
     public partial class bangcong : Form
     {
+        check ck = new check();
         string data;
         SqlConnection cont;
         SqlCommand comd;
@@ -58,31 +59,40 @@ namespace baitaplon
                 }
             }
         }
-        void loaddatagirl()
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter("select * from TblBangCongThuViec", data);
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-            ngatketNoi();
-        }
+
         private void xuiButton4_Click(object sender, EventArgs e)
         {
             try
             {
-                ketNoi();
-                string insert = "insert into TblBangCongThuViec values(N'" + txt1.Text + "',N'" + txt2.Text + "',N'" + cbbmnv1.Text + "',N'" + txt3.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + txt6.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + textBox3.Text + "',N'" + txt9.Text + "')";
-                comd = new SqlCommand(insert, cont);
-                read = comd.ExecuteReader();
-                loaddatagirl();
-                MessageBox.Show("Xong");
-                ngatketNoi();
-            }
-            catch (Exception ll)
+          if (ck.checkmatrung(cbbmnv1.Text, "TblBangCongThuViec", "MaNVTV"))
             {
-                MessageBox.Show(ll.Message);
+                errorProvider1.Clear();
+                try
+                {
+                    ketNoi();
+                    string insert = "insert into TblBangCongThuViec values(N'" + txt1.Text + "',N'" + txt2.Text + "',N'" + cbbmnv1.Text + "',N'" + txt3.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + txt6.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + textBox3.Text + "',N'" + txt9.Text + "')";
+                    comd = new SqlCommand(insert, cont);
+                    read = comd.ExecuteReader();
+                        ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
+                    MessageBox.Show("Xong");
+                    ngatketNoi();
+                }
+                catch (Exception ll)
+                {
+                    MessageBox.Show(ll.Message);
+                }
             }
+            else
+            {
+               errorProvider1.SetError(cbbmnv1, "Mã nhân viên đã tồn tại");
+            }
+            }
+            catch(Exception f)
+            {
+                MessageBox.Show(f.Message);
+            }
+
+
         }
         void loadcbb(ComboBox m,string sql)
         {
@@ -98,11 +108,10 @@ namespace baitaplon
         }
         private void bangcong_Load(object sender, EventArgs e)
         {
-            loaddatagirl();
-            loadcbb(cbbmnv1, "select MaNVTV from TblHoSoThuViec");
-            loadcbb(cbbtenphong, "SELECT TenPhong FROM TblPhongBan");
-            loadcbb(cbbtenphong, "SELECT TenPhong FROM TblPhongBan");
-            loaddatagirl2();    
+            ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
+            ck.loaddg("select * from TblCongKhoiDieuHanh", dataGridView2);
+            ck.loadcbb(cbbmnv1,0, "select MaNVTV from TblHoSoThuViec");
+            ck.loadcbb(cbbtenphong, 0, "SELECT TenPhong FROM TblPhongBan");
         }
 
         private void xuiButton1_Click(object sender, EventArgs e)
@@ -113,7 +122,7 @@ namespace baitaplon
                 string update = "update TblBangCongThuViec set TenBoPhan=N'" + txt1.Text + "',TenPhong=N'" + txt2.Text + "',LuongTViec=N'" + txt3.Text + "',Thang=N'" + txt4.Text + "',Nam='" + txt5.Text + "',SoNgayCong=N'" + txt6.Text + "',SoNgayNghi=N'" + txt7.Text + "',SoGioLamThem=N'" + txt8.Text + "',Luong=N'" + textBox3.Text + "',GhiChu='" + txt9.Text + "' where MaNVTV=N'" + cbbmnv1.Text + "'";
                 comd = new SqlCommand(update,cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl();
+                ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
                 MessageBox.Show("Sửa thành công");
                 ngatketNoi();
             }
@@ -156,7 +165,7 @@ namespace baitaplon
                 comd = new SqlCommand(delete, cont);
                 comd.ExecuteNonQuery();
                 MessageBox.Show("Xong");
-                loaddatagirl();
+                ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
                 ngatketNoi();
             }
             catch(Exception s)
@@ -231,15 +240,6 @@ namespace baitaplon
             cbbmnv2.Text = "";
             
         }
-        void loaddatagirl2()
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter("select * from TblCongKhoiDieuHanh", data);
-            adap.Fill(dt);
-            dataGridView2.DataSource = dt;
-            ngatketNoi();
-        }
 
         private void xuiButton11_Click(object sender, EventArgs e)
         {
@@ -265,7 +265,7 @@ namespace baitaplon
                 string update = "update TblCongKhoiDieuHanh set  MaLuong=N'" + txt50.Text + "',TenPhong=N'" + cbbtenphong.Text + "', HoTen=N'" + txt53.Text + "',LCB=N'" + txt10.Text + "',PCChucVu=N'" + txt11.Text + "',PCapKhac=N'" + txt12.Text + "',Thuong=N'" + textBox1.Text + "',KyLuat='" + textBox2.Text + "',Thang=N'" + txt13.Text + "',Nam='" + txt14.Text + "',SoNgayCongThang=N'" + txt15.Text + "',SoNgayNghi=N'" + txt16.Text + "',SoGioLamThem=N'" + txt17.Text + "',Luong=N'" + txt52.Text + "',GhiChu='" + txt18.Text + "' where MaNV=N'" + cbbmnv2.Text + "'";
                 comd = new SqlCommand(update, cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl2();
+                ck.loaddg("select * from TblCongKhoiDieuHanh", dataGridView2);
                 MessageBox.Show("Sửa thành công");
                 ngatketNoi();
             }
@@ -285,7 +285,7 @@ namespace baitaplon
                 {
                     comd = new SqlCommand(delete,cont);
                     comd.ExecuteNonQuery();
-                    loaddatagirl2();
+                    ck.loaddg("select * from TblCongKhoiDieuHanh", dataGridView2);
                 }
                 ngatketNoi();
             }

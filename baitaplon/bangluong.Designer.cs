@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bangluong));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.xuiButton10 = new XanderUI.XUIButton();
+            this.xuiButton9 = new XanderUI.XUIButton();
+            this.xuiButton6 = new XanderUI.XUIButton();
+            this.xuiButton8 = new XanderUI.XUIButton();
+            this.xuiButton7 = new XanderUI.XUIButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -57,6 +63,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dg2 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.xuiButton5 = new XanderUI.XUIButton();
+            this.xuiButton4 = new XanderUI.XUIButton();
+            this.xuiButton3 = new XanderUI.XUIButton();
+            this.xuiButton2 = new XanderUI.XUIButton();
+            this.xuiButton1 = new XanderUI.XUIButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -74,16 +85,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.xuiButton5 = new XanderUI.XUIButton();
-            this.xuiButton4 = new XanderUI.XUIButton();
-            this.xuiButton3 = new XanderUI.XUIButton();
-            this.xuiButton1 = new XanderUI.XUIButton();
-            this.xuiButton2 = new XanderUI.XUIButton();
-            this.xuiButton6 = new XanderUI.XUIButton();
-            this.xuiButton7 = new XanderUI.XUIButton();
-            this.xuiButton8 = new XanderUI.XUIButton();
-            this.xuiButton9 = new XanderUI.XUIButton();
-            this.xuiButton10 = new XanderUI.XUIButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,6 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg2)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -140,6 +143,116 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Các chức năng";
+            // 
+            // xuiButton10
+            // 
+            this.xuiButton10.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton10.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton10.ButtonImage")));
+            this.xuiButton10.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton10.ButtonText = "Thêm ";
+            this.xuiButton10.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton10.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton10.CornerRadius = 5;
+            this.xuiButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton10.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton10.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton10.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton10.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton10.Location = new System.Drawing.Point(278, 16);
+            this.xuiButton10.Name = "xuiButton10";
+            this.xuiButton10.Size = new System.Drawing.Size(100, 32);
+            this.xuiButton10.TabIndex = 9;
+            this.xuiButton10.TextColor = System.Drawing.Color.Black;
+            this.xuiButton10.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton10.Click += new System.EventHandler(this.xuiButton10_Click);
+            // 
+            // xuiButton9
+            // 
+            this.xuiButton9.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton9.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton9.ButtonImage")));
+            this.xuiButton9.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton9.ButtonText = "Sửa ";
+            this.xuiButton9.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton9.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton9.CornerRadius = 5;
+            this.xuiButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton9.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton9.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton9.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton9.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton9.Location = new System.Drawing.Point(384, 16);
+            this.xuiButton9.Name = "xuiButton9";
+            this.xuiButton9.Size = new System.Drawing.Size(100, 32);
+            this.xuiButton9.TabIndex = 8;
+            this.xuiButton9.TextColor = System.Drawing.Color.Black;
+            this.xuiButton9.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton9.Click += new System.EventHandler(this.xuiButton9_Click);
+            // 
+            // xuiButton6
+            // 
+            this.xuiButton6.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton6.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton6.ButtonImage")));
+            this.xuiButton6.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton6.ButtonText = "Xoá ";
+            this.xuiButton6.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton6.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton6.CornerRadius = 5;
+            this.xuiButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton6.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton6.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton6.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton6.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton6.Location = new System.Drawing.Point(490, 16);
+            this.xuiButton6.Name = "xuiButton6";
+            this.xuiButton6.Size = new System.Drawing.Size(100, 32);
+            this.xuiButton6.TabIndex = 5;
+            this.xuiButton6.TextColor = System.Drawing.Color.Black;
+            this.xuiButton6.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton6.Click += new System.EventHandler(this.xuiButton6_Click);
+            // 
+            // xuiButton8
+            // 
+            this.xuiButton8.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton8.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton8.ButtonImage")));
+            this.xuiButton8.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton8.ButtonText = "Mới";
+            this.xuiButton8.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton8.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton8.CornerRadius = 5;
+            this.xuiButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton8.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton8.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton8.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton8.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton8.Location = new System.Drawing.Point(172, 16);
+            this.xuiButton8.Name = "xuiButton8";
+            this.xuiButton8.Size = new System.Drawing.Size(100, 32);
+            this.xuiButton8.TabIndex = 7;
+            this.xuiButton8.TextColor = System.Drawing.Color.Black;
+            this.xuiButton8.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton8.Click += new System.EventHandler(this.xuiButton8_Click);
+            // 
+            // xuiButton7
+            // 
+            this.xuiButton7.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton7.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton7.ButtonImage")));
+            this.xuiButton7.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton7.ButtonText = "Thoát";
+            this.xuiButton7.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton7.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton7.CornerRadius = 5;
+            this.xuiButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton7.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton7.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton7.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton7.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton7.Location = new System.Drawing.Point(596, 16);
+            this.xuiButton7.Name = "xuiButton7";
+            this.xuiButton7.Size = new System.Drawing.Size(100, 32);
+            this.xuiButton7.TabIndex = 6;
+            this.xuiButton7.TextColor = System.Drawing.Color.Black;
+            this.xuiButton7.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton7.Click += new System.EventHandler(this.xuiButton7_Click);
             // 
             // groupBox1
             // 
@@ -242,6 +355,7 @@
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(96, 21);
             this.txt1.TabIndex = 1;
+            this.txt1.Leave += new System.EventHandler(this.txt1_Leave);
             // 
             // label12
             // 
@@ -367,6 +481,116 @@
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Các chức năng";
+            // 
+            // xuiButton5
+            // 
+            this.xuiButton5.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton5.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton5.ButtonImage")));
+            this.xuiButton5.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton5.ButtonText = "Xoá";
+            this.xuiButton5.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton5.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton5.CornerRadius = 5;
+            this.xuiButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton5.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton5.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton5.Location = new System.Drawing.Point(496, 12);
+            this.xuiButton5.Name = "xuiButton5";
+            this.xuiButton5.Size = new System.Drawing.Size(100, 35);
+            this.xuiButton5.TabIndex = 4;
+            this.xuiButton5.TextColor = System.Drawing.Color.Black;
+            this.xuiButton5.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton5.Click += new System.EventHandler(this.xuiButton5_Click);
+            // 
+            // xuiButton4
+            // 
+            this.xuiButton4.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton4.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton4.ButtonImage")));
+            this.xuiButton4.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton4.ButtonText = "Sửa";
+            this.xuiButton4.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton4.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton4.CornerRadius = 5;
+            this.xuiButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton4.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton4.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton4.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton4.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton4.Location = new System.Drawing.Point(390, 12);
+            this.xuiButton4.Name = "xuiButton4";
+            this.xuiButton4.Size = new System.Drawing.Size(100, 35);
+            this.xuiButton4.TabIndex = 3;
+            this.xuiButton4.TextColor = System.Drawing.Color.Black;
+            this.xuiButton4.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton4.Click += new System.EventHandler(this.xuiButton4_Click);
+            // 
+            // xuiButton3
+            // 
+            this.xuiButton3.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton3.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton3.ButtonImage")));
+            this.xuiButton3.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton3.ButtonText = "Thêm";
+            this.xuiButton3.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton3.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton3.CornerRadius = 5;
+            this.xuiButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton3.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton3.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton3.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton3.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton3.Location = new System.Drawing.Point(276, 12);
+            this.xuiButton3.Name = "xuiButton3";
+            this.xuiButton3.Size = new System.Drawing.Size(100, 35);
+            this.xuiButton3.TabIndex = 2;
+            this.xuiButton3.TextColor = System.Drawing.Color.Black;
+            this.xuiButton3.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton3.Click += new System.EventHandler(this.xuiButton3_Click);
+            // 
+            // xuiButton2
+            // 
+            this.xuiButton2.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton2.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton2.ButtonImage")));
+            this.xuiButton2.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton2.ButtonText = "Thoát";
+            this.xuiButton2.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton2.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton2.CornerRadius = 5;
+            this.xuiButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton2.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton2.Location = new System.Drawing.Point(602, 12);
+            this.xuiButton2.Name = "xuiButton2";
+            this.xuiButton2.Size = new System.Drawing.Size(100, 35);
+            this.xuiButton2.TabIndex = 1;
+            this.xuiButton2.TextColor = System.Drawing.Color.Black;
+            this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton2.Click += new System.EventHandler(this.xuiButton2_Click);
+            // 
+            // xuiButton1
+            // 
+            this.xuiButton1.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton1.ButtonImage")));
+            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton1.ButtonText = "Mới";
+            this.xuiButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton1.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton1.CornerRadius = 5;
+            this.xuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton1.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton1.Location = new System.Drawing.Point(170, 12);
+            this.xuiButton1.Name = "xuiButton1";
+            this.xuiButton1.Size = new System.Drawing.Size(100, 35);
+            this.xuiButton1.TabIndex = 0;
+            this.xuiButton1.TextColor = System.Drawing.Color.Black;
+            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton1.Click += new System.EventHandler(this.xuiButton1_Click);
             // 
             // groupBox4
             // 
@@ -524,225 +748,9 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Mã nhân viên";
             // 
-            // xuiButton5
+            // errorProvider1
             // 
-            this.xuiButton5.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton5.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton5.ButtonImage")));
-            this.xuiButton5.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton5.ButtonText = "Xoá";
-            this.xuiButton5.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton5.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton5.CornerRadius = 5;
-            this.xuiButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton5.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton5.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton5.Location = new System.Drawing.Point(496, 12);
-            this.xuiButton5.Name = "xuiButton5";
-            this.xuiButton5.Size = new System.Drawing.Size(100, 35);
-            this.xuiButton5.TabIndex = 4;
-            this.xuiButton5.TextColor = System.Drawing.Color.Black;
-            this.xuiButton5.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton5.Click += new System.EventHandler(this.xuiButton5_Click);
-            // 
-            // xuiButton4
-            // 
-            this.xuiButton4.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton4.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton4.ButtonImage")));
-            this.xuiButton4.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton4.ButtonText = "Sửa";
-            this.xuiButton4.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton4.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton4.CornerRadius = 5;
-            this.xuiButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton4.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton4.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton4.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton4.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton4.Location = new System.Drawing.Point(390, 12);
-            this.xuiButton4.Name = "xuiButton4";
-            this.xuiButton4.Size = new System.Drawing.Size(100, 35);
-            this.xuiButton4.TabIndex = 3;
-            this.xuiButton4.TextColor = System.Drawing.Color.Black;
-            this.xuiButton4.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton4.Click += new System.EventHandler(this.xuiButton4_Click);
-            // 
-            // xuiButton3
-            // 
-            this.xuiButton3.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton3.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton3.ButtonImage")));
-            this.xuiButton3.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton3.ButtonText = "Thêm";
-            this.xuiButton3.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton3.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton3.CornerRadius = 5;
-            this.xuiButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton3.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton3.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton3.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton3.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton3.Location = new System.Drawing.Point(276, 12);
-            this.xuiButton3.Name = "xuiButton3";
-            this.xuiButton3.Size = new System.Drawing.Size(100, 35);
-            this.xuiButton3.TabIndex = 2;
-            this.xuiButton3.TextColor = System.Drawing.Color.Black;
-            this.xuiButton3.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton3.Click += new System.EventHandler(this.xuiButton3_Click);
-            // 
-            // xuiButton1
-            // 
-            this.xuiButton1.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton1.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton1.ButtonImage")));
-            this.xuiButton1.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton1.ButtonText = "Mới";
-            this.xuiButton1.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton1.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton1.CornerRadius = 5;
-            this.xuiButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton1.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton1.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton1.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton1.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton1.Location = new System.Drawing.Point(170, 12);
-            this.xuiButton1.Name = "xuiButton1";
-            this.xuiButton1.Size = new System.Drawing.Size(100, 35);
-            this.xuiButton1.TabIndex = 0;
-            this.xuiButton1.TextColor = System.Drawing.Color.Black;
-            this.xuiButton1.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton1.Click += new System.EventHandler(this.xuiButton1_Click);
-            // 
-            // xuiButton2
-            // 
-            this.xuiButton2.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton2.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton2.ButtonImage")));
-            this.xuiButton2.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton2.ButtonText = "Thoát";
-            this.xuiButton2.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton2.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton2.CornerRadius = 5;
-            this.xuiButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton2.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton2.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton2.Location = new System.Drawing.Point(602, 12);
-            this.xuiButton2.Name = "xuiButton2";
-            this.xuiButton2.Size = new System.Drawing.Size(100, 35);
-            this.xuiButton2.TabIndex = 1;
-            this.xuiButton2.TextColor = System.Drawing.Color.Black;
-            this.xuiButton2.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton2.Click += new System.EventHandler(this.xuiButton2_Click);
-            // 
-            // xuiButton6
-            // 
-            this.xuiButton6.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton6.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton6.ButtonImage")));
-            this.xuiButton6.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton6.ButtonText = "Xoá ";
-            this.xuiButton6.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton6.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton6.CornerRadius = 5;
-            this.xuiButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton6.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton6.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton6.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton6.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton6.Location = new System.Drawing.Point(490, 16);
-            this.xuiButton6.Name = "xuiButton6";
-            this.xuiButton6.Size = new System.Drawing.Size(100, 32);
-            this.xuiButton6.TabIndex = 5;
-            this.xuiButton6.TextColor = System.Drawing.Color.Black;
-            this.xuiButton6.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton6.Click += new System.EventHandler(this.xuiButton6_Click);
-            // 
-            // xuiButton7
-            // 
-            this.xuiButton7.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton7.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton7.ButtonImage")));
-            this.xuiButton7.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton7.ButtonText = "Thoát";
-            this.xuiButton7.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton7.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton7.CornerRadius = 5;
-            this.xuiButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton7.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton7.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton7.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton7.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton7.Location = new System.Drawing.Point(596, 16);
-            this.xuiButton7.Name = "xuiButton7";
-            this.xuiButton7.Size = new System.Drawing.Size(100, 32);
-            this.xuiButton7.TabIndex = 6;
-            this.xuiButton7.TextColor = System.Drawing.Color.Black;
-            this.xuiButton7.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton7.Click += new System.EventHandler(this.xuiButton7_Click);
-            // 
-            // xuiButton8
-            // 
-            this.xuiButton8.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton8.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton8.ButtonImage")));
-            this.xuiButton8.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton8.ButtonText = "Mới";
-            this.xuiButton8.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton8.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton8.CornerRadius = 5;
-            this.xuiButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton8.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton8.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton8.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton8.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton8.Location = new System.Drawing.Point(172, 16);
-            this.xuiButton8.Name = "xuiButton8";
-            this.xuiButton8.Size = new System.Drawing.Size(100, 32);
-            this.xuiButton8.TabIndex = 7;
-            this.xuiButton8.TextColor = System.Drawing.Color.Black;
-            this.xuiButton8.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton8.Click += new System.EventHandler(this.xuiButton8_Click);
-            // 
-            // xuiButton9
-            // 
-            this.xuiButton9.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton9.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton9.ButtonImage")));
-            this.xuiButton9.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton9.ButtonText = "Sửa ";
-            this.xuiButton9.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton9.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton9.CornerRadius = 5;
-            this.xuiButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton9.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton9.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton9.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton9.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton9.Location = new System.Drawing.Point(384, 16);
-            this.xuiButton9.Name = "xuiButton9";
-            this.xuiButton9.Size = new System.Drawing.Size(100, 32);
-            this.xuiButton9.TabIndex = 8;
-            this.xuiButton9.TextColor = System.Drawing.Color.Black;
-            this.xuiButton9.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton9.Click += new System.EventHandler(this.xuiButton9_Click);
-            // 
-            // xuiButton10
-            // 
-            this.xuiButton10.BackgroundColor = System.Drawing.Color.White;
-            this.xuiButton10.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton10.ButtonImage")));
-            this.xuiButton10.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
-            this.xuiButton10.ButtonText = "Thêm ";
-            this.xuiButton10.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.xuiButton10.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton10.CornerRadius = 5;
-            this.xuiButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.xuiButton10.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton10.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.xuiButton10.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.xuiButton10.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton10.Location = new System.Drawing.Point(278, 16);
-            this.xuiButton10.Name = "xuiButton10";
-            this.xuiButton10.Size = new System.Drawing.Size(100, 32);
-            this.xuiButton10.TabIndex = 9;
-            this.xuiButton10.TextColor = System.Drawing.Color.Black;
-            this.xuiButton10.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.xuiButton10.Click += new System.EventHandler(this.xuiButton10_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // bangluong
             // 
@@ -768,6 +776,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -829,5 +838,6 @@
         private XanderUI.XUIButton xuiButton6;
         private XanderUI.XUIButton xuiButton8;
         private XanderUI.XUIButton xuiButton7;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

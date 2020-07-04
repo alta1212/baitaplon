@@ -13,6 +13,7 @@ namespace baitaplon
 {
     public partial class bangluong : Form
     {
+        check ck = new check();
         string data;
         SqlConnection cont;
         SqlCommand comd;
@@ -66,36 +67,36 @@ namespace baitaplon
 
         private void xuiButton10_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ketNoi();
+            if (ck.checkmatrung(txt1.Text, "TblBangLuongCTy", "MaLuong"))
+                if (txt1.Text.Trim() != "")
+                    try
+                    {
+                        errorProvider1.Clear();
+                        ketNoi();
+                        string insert = "insert into TblBangLuongCTy values(N'" + txt1.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + dateTimePicker1.Text + "',N'" + txt6.Text + "',N'" + dateTimePicker2.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + dateTimePicker3.Text + "',N'" + txt9.Text + "')";
+                        comd = new SqlCommand(insert, cont);
+                        comd.ExecuteNonQuery();
+                        MessageBox.Show("xong");
+                        ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
+                        ngatketNoi();
+                    }
+                    catch (Exception s)
+                    {
+                        MessageBox.Show("dữ liệu đầu vào không hợp lệ");
+                    }
+                else
+                    MessageBox.Show("dữ liệu đầu vào không hợp lệ");
 
-                string insert = "insert into TblBangLuongCTy values(N'" + txt1.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + dateTimePicker1.Text + "',N'" + txt6.Text + "',N'" + dateTimePicker2.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + dateTimePicker3.Text + "',N'" + txt9.Text + "')";
-                comd = new SqlCommand(insert,cont);
-                comd.ExecuteNonQuery();
-                MessageBox.Show("xong");
-                loaddatagirl("select * from TblBangLuongCTy", dataGridView1);
-                ngatketNoi();
-            }
-            catch(Exception s)
-            {
-                MessageBox.Show(s.Message);
-            }
+            else
+                errorProvider1.SetError(txt1, "Mã lương đã tồn tại");
         }
-        void loaddatagirl(string sql,DataGridView d)
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter(sql, data);
-            adap.Fill(dt);
-            d.DataSource = dt;
-            ngatketNoi();
-        }
+
 
         private void bangluong_Load(object sender, EventArgs e)
         {
-            loaddatagirl("select * from TblBangLuongCTy",dataGridView1);
-            loaddatagirl("select * from TblTangLuong", dg2);
+  
+            ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
+            ck.loaddg("select * from TblTangLuong", dg2);
             loadcombobox(comboBox1, "select * from TblTTNVCoBan where MaNV not in (select MaNV from TblTangLuong )", 2);
         }
 
@@ -120,7 +121,7 @@ namespace baitaplon
                 string update = "update TblBangLuongCTy set LCB=N'" + txt4.Text + "',PCChucVu=N'" + txt5.Text + "',NgayNhap='" + dateTimePicker1.Text + "',LCBMoi=N'" + txt6.Text + "',NgaySua=N'" + dateTimePicker2.Text + "',LyDo=N'" + txt7.Text + "',PCCVuMoi='" + txt8.Text + "',NgaySuaPC=N'" + dateTimePicker3.Text + "',GhiChu=N'" + txt9.Text + "' where MaLuong=N'" + txt1.Text + "'";
                 comd = new SqlCommand(update, cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl("select * from TblBangLuongCTy", dataGridView1);
+                ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
                 MessageBox.Show("Sửa thành công");
                 ngatketNoi();
             }
@@ -187,7 +188,7 @@ namespace baitaplon
                 {
                     comd = new SqlCommand(delete,cont);
                     comd.ExecuteNonQuery();
-                    loaddatagirl("select * from TblBangLuongCTy", dataGridView1);
+                    ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
                     MessageBox.Show("Đã xoá");
                 }
                 ngatketNoi();
@@ -210,9 +211,11 @@ namespace baitaplon
         }
 
         private void xuiButton3_Click(object sender, EventArgs e)
-        {
+        {   
+            if(ck.checkmatrung(comboBox1.Text, "TblTangLuong","Manv"))
             try
             {
+                    errorProvider1.Clear();
                 ketNoi();
                 string insert = "insert into TblTangLuong values(N'" + comboBox1.Text + "',N'" + txt10.Text + "',N'" + txt11.Text + "',N'" + txt12.Text + "',N'" + textBox1.Text + "',N'" + txt15.Text + "',N'" + dateTimePicker6.Text + "',N'" + txt18.Text + "')";
                 comd = new SqlCommand(insert,cont);
@@ -222,7 +225,7 @@ namespace baitaplon
                 comd = new SqlCommand(up, cont);
                 comd.ExecuteNonQuery();
 
-                loaddatagirl("select * from TblTangLuong", dg2);
+                ck.loaddg("select * from TblTangLuong", dg2);
                 MessageBox.Show("Đã thêm");
                 ngatketNoi();
                 comboBox1.Items.Clear();
@@ -232,7 +235,10 @@ namespace baitaplon
             {
                 MessageBox.Show(k.Message);
             }
-          
+          else
+            {
+                errorProvider1.SetError(comboBox1, "Mã nhân viên đã tồn tại trong bảng tăng lương");
+            }    
           
    
         }
@@ -286,8 +292,7 @@ namespace baitaplon
                 string up = "update TblTTNVCoBan set MaLuong=N'" + txt15.Text + "' where MaNV='" + comboBox1.Text + "'";
                 comd = new SqlCommand(up, cont);
                 comd.ExecuteNonQuery();
-
-                loaddatagirl("select * from TblTangLuong", dg2);
+                ck.loaddg("select * from TblTangLuong", dg2);
                 MessageBox.Show("Sửa thành công");
                 ngatketNoi();
             }
@@ -309,12 +314,25 @@ namespace baitaplon
             {
                 comd = new SqlCommand(delete, cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl("select * from TblTangLuong", dg2);
+                ck.loaddg("select * from TblTangLuong", dg2);
                 comboBox1.Items.Clear();
                 loadcombobox(comboBox1, "select * from TblTTNVCoBan where MaNV not in (select MaNV from TblTangLuong )", 2);
                 MessageBox.Show("đã xoá");
             }
             ngatketNoi();
+        }
+
+        private void txt1_Leave(object sender, EventArgs e)
+        {
+            if (!ck.checkmatrung(txt1.Text, "TblBangLuongCTy", "MaLuong"))
+            {
+                errorProvider1.SetError(txt1, "Mã nhân viên đã tồn tại");
+
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
         }
     }
 }

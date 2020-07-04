@@ -14,6 +14,7 @@ namespace baitaplon
     public partial class frmbophan : Form
     {
         string data;
+        check ck = new check();
         SqlConnection cont;
         SqlCommand comd;
         SqlDataReader read;
@@ -68,7 +69,7 @@ namespace baitaplon
                 string insert = "insert into TblBoPhan values(N'" + textBox1.Text + "',N'" + textBox2.Text + "',N'" + dateTimePicker1.Text + "',N'" + textBox3.Text + "')";
                 comd = new SqlCommand(insert, cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl();
+                ck.loaddg("select * from TblBoPhan", dataGridView1);
                 MessageBox.Show("Xong");
                 ngatketNoi();
                 
@@ -82,17 +83,9 @@ namespace baitaplon
 
         private void frmbophan_Load(object sender, EventArgs e)
         {
-            loaddatagirl();
+            ck.loaddg("select * from TblBoPhan", dataGridView1);
         }
-        void loaddatagirl()
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter("select * from TblBoPhan", data);
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-            ngatketNoi();
-        }
+       
 
         private void xuiButton5_Click(object sender, EventArgs e)
         {
@@ -103,7 +96,7 @@ namespace baitaplon
                 string update = "update TblBoPhan set TenBoPhan=N'" + textBox2.Text + "',NgayThanhLap=N'" + dateTimePicker1.Text + "',GhiChu=N'" + textBox3.Text + "' where MaBoPhan='" + textBox1.Text + "'";
                 comd = new SqlCommand(update, cont);
                 comd.ExecuteNonQuery();
-                loaddatagirl();
+                ck.loaddg("select * from TblBoPhan", dataGridView1);
                 MessageBox.Show("Xong");
                 ngatketNoi();
                 MessageBox.Show("Sửa thành công");

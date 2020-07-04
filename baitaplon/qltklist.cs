@@ -45,7 +45,7 @@ namespace baitaplon
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             doipass l = new doipass();
-            l.getdata("Data Source=(local);Initial Catalog=qlns;Persist Security Info=True;User ID=sa;Password=123",id);
+            l.getdata("Data Source=(local);Initial Catalog=QLNS;Integrated Security=True", id);
             l.ShowDialog();
                 
         }

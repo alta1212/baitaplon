@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tap = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@
             this.txtghichu = new System.Windows.Forms.TextBox();
             this.txtmabh = new System.Windows.Forms.TextBox();
             this.txtnoicap = new System.Windows.Forms.TextBox();
-            this.txtmaluong = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -81,6 +81,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tap.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -92,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.datathaisan)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.grts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tap
@@ -202,12 +205,12 @@
             // 
             // grup1
             // 
+            this.grup1.Controls.Add(this.comboBox1);
             this.grup1.Controls.Add(this.cbbmnv);
             this.grup1.Controls.Add(this.datengaycap);
             this.grup1.Controls.Add(this.txtghichu);
             this.grup1.Controls.Add(this.txtmabh);
             this.grup1.Controls.Add(this.txtnoicap);
-            this.grup1.Controls.Add(this.txtmaluong);
             this.grup1.Controls.Add(this.label6);
             this.grup1.Controls.Add(this.label3);
             this.grup1.Controls.Add(this.label5);
@@ -258,14 +261,6 @@
             this.txtnoicap.Name = "txtnoicap";
             this.txtnoicap.Size = new System.Drawing.Size(142, 21);
             this.txtnoicap.TabIndex = 4;
-            // 
-            // txtmaluong
-            // 
-            this.txtmaluong.Location = new System.Drawing.Point(93, 68);
-            this.txtmaluong.Name = "txtmaluong";
-            this.txtmaluong.ReadOnly = true;
-            this.txtmaluong.Size = new System.Drawing.Size(142, 21);
-            this.txtmaluong.TabIndex = 1;
             // 
             // label6
             // 
@@ -607,6 +602,18 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Mã bộ phận";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(92, 66);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(140, 23);
+            this.comboBox1.TabIndex = 8;
+            // 
             // chedo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,6 +641,7 @@
             this.groupBox3.ResumeLayout(false);
             this.grts.ResumeLayout(false);
             this.grts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -650,7 +658,6 @@
         private System.Windows.Forms.TextBox txtghichu;
         private System.Windows.Forms.TextBox txtmabh;
         private System.Windows.Forms.TextBox txtnoicap;
-        private System.Windows.Forms.TextBox txtmaluong;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
@@ -693,5 +700,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
