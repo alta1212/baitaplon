@@ -33,28 +33,26 @@ namespace baitaplon
         private void xuiButton2_Click(object sender, EventArgs e)
         {
             phongban k = new phongban();
-            k.getdata(data);
             k.ShowDialog();
         }
 
         private void xuiButton3_Click(object sender, EventArgs e)
         {
             bangcong k = new bangcong();
-            k.getdata(data);
+          
             k.ShowDialog();
         }
 
         private void xuiButton4_Click(object sender, EventArgs e)
         {
             frmbophan k = new frmbophan();
-            k.getdata(data);
             k.ShowDialog();
         }
 
         private void xuiButton3_Click_1(object sender, EventArgs e)
         {
             bangluong k = new bangluong();
-            k.getdata(data);
+          
             k.ShowDialog();
         }
     }

@@ -69,11 +69,9 @@
             this.xuiButton2 = new XanderUI.XUIButton();
             this.xuiButton1 = new XanderUI.XUIButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.txt12 = new System.Windows.Forms.TextBox();
-            this.txt15 = new System.Windows.Forms.TextBox();
             this.txt11 = new System.Windows.Forms.TextBox();
             this.txt18 = new System.Windows.Forms.TextBox();
             this.txt10 = new System.Windows.Forms.TextBox();
@@ -86,6 +84,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbbmlm = new System.Windows.Forms.ComboBox();
+            this.cbbmlc = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -594,11 +594,11 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.cbbmlc);
+            this.groupBox4.Controls.Add(this.cbbmlm);
             this.groupBox4.Controls.Add(this.comboBox1);
             this.groupBox4.Controls.Add(this.dateTimePicker6);
             this.groupBox4.Controls.Add(this.txt12);
-            this.groupBox4.Controls.Add(this.txt15);
             this.groupBox4.Controls.Add(this.txt11);
             this.groupBox4.Controls.Add(this.txt18);
             this.groupBox4.Controls.Add(this.txt10);
@@ -616,13 +616,6 @@
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin về tăng lương nhân viên";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(265, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 21);
-            this.textBox1.TabIndex = 12;
             // 
             // comboBox1
             // 
@@ -647,13 +640,6 @@
             this.txt12.Name = "txt12";
             this.txt12.Size = new System.Drawing.Size(112, 21);
             this.txt12.TabIndex = 3;
-            // 
-            // txt15
-            // 
-            this.txt15.Location = new System.Drawing.Point(264, 84);
-            this.txt15.Name = "txt15";
-            this.txt15.Size = new System.Drawing.Size(112, 21);
-            this.txt15.TabIndex = 6;
             // 
             // txt11
             // 
@@ -752,6 +738,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // cbbmlm
+            // 
+            this.cbbmlm.FormattingEnabled = true;
+            this.cbbmlm.Location = new System.Drawing.Point(264, 85);
+            this.cbbmlm.Name = "cbbmlm";
+            this.cbbmlm.Size = new System.Drawing.Size(121, 23);
+            this.cbbmlm.TabIndex = 12;
+            // 
+            // cbbmlc
+            // 
+            this.cbbmlc.FormattingEnabled = true;
+            this.cbbmlc.Location = new System.Drawing.Point(264, 53);
+            this.cbbmlc.Name = "cbbmlc";
+            this.cbbmlc.Size = new System.Drawing.Size(121, 23);
+            this.cbbmlc.TabIndex = 13;
+            // 
             // bangluong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -815,7 +817,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker6;
         private System.Windows.Forms.TextBox txt12;
-        private System.Windows.Forms.TextBox txt15;
         private System.Windows.Forms.TextBox txt11;
         private System.Windows.Forms.TextBox txt18;
         private System.Windows.Forms.TextBox txt10;
@@ -827,7 +828,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox1;
         private XanderUI.XUIButton xuiButton5;
         private XanderUI.XUIButton xuiButton4;
         private XanderUI.XUIButton xuiButton3;
@@ -839,5 +839,7 @@
         private XanderUI.XUIButton xuiButton8;
         private XanderUI.XUIButton xuiButton7;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cbbmlc;
+        private System.Windows.Forms.ComboBox cbbmlm;
     }
 }

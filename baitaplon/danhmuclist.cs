@@ -21,7 +21,6 @@ namespace baitaplon
         private void button1_Click(object sender, EventArgs e)
         {
             frmcoban l = new frmcoban();
-            l.getdata(data);
             l.ShowDialog();
         }
 
@@ -38,21 +37,18 @@ namespace baitaplon
         private void button2_Click(object sender, EventArgs e)
         {
             i4canhan l = new i4canhan();
-            l.getdata(data);
             l.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             chedo l = new chedo();
-            l.getdata(data);
             l.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             thuviec l = new thuviec();
-            l.getdata(data);
             l.ShowDialog();
         }
     }

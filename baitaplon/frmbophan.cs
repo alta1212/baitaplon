@@ -13,32 +13,8 @@ namespace baitaplon
 {
     public partial class frmbophan : Form
     {
-        string data;
+      
         check ck = new check();
-        SqlConnection cont;
-        SqlCommand comd;
-        SqlDataReader read;
-        DataTable dt;
-        SqlDataAdapter adap;
-        public void getdata(string chuoi)
-        {
-            data = chuoi;
-
-        }
-        void ketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Mở
-            if (cont.State == ConnectionState.Closed)
-                cont.Open();
-        }
-        void ngatketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Đóng
-            if (cont.State == ConnectionState.Open)
-                cont.Close();
-        }
 
         public frmbophan()
         {
@@ -63,22 +39,24 @@ namespace baitaplon
 
         private void xuiButton4_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ketNoi();
-                string insert = "insert into TblBoPhan values(N'" + textBox1.Text + "',N'" + textBox2.Text + "',N'" + dateTimePicker1.Text + "',N'" + textBox3.Text + "')";
-                comd = new SqlCommand(insert, cont);
-                comd.ExecuteNonQuery();
-                ck.loaddg("select * from TblBoPhan", dataGridView1);
-                MessageBox.Show("Xong");
-                ngatketNoi();
-                
+            if (ck.checkmatrung(textBox1.Text, "TblBoPhan", "mabophan"))
+                try
+                {
+                    errorProvider1.Clear();
+                    string insert = "insert into TblBoPhan values(N'" + textBox1.Text + "',N'" + textBox2.Text + "',N'" + dateTimePicker1.Text + "',N'" + textBox3.Text + "')";
+                    ck.thucthi(insert);
+                    ck.loaddg("select * from TblBoPhan", dataGridView1);
+                    MessageBox.Show("Xong");
 
-            }
-            catch(Exception c)
-            {
-                MessageBox.Show(c.Message);
-            }
+
+
+                }
+                catch (Exception c)
+                {
+                    MessageBox.Show(c.Message);
+                }
+            else
+                errorProvider1.SetError(textBox1,"mã bộ phận đã tồn tại");
         }
 
         private void frmbophan_Load(object sender, EventArgs e)
@@ -92,13 +70,11 @@ namespace baitaplon
 
             try
             {
-                ketNoi();
+              
                 string update = "update TblBoPhan set TenBoPhan=N'" + textBox2.Text + "',NgayThanhLap=N'" + dateTimePicker1.Text + "',GhiChu=N'" + textBox3.Text + "' where MaBoPhan='" + textBox1.Text + "'";
-                comd = new SqlCommand(update, cont);
-                comd.ExecuteNonQuery();
+                ck.thucthi(update);
                 ck.loaddg("select * from TblBoPhan", dataGridView1);
-                MessageBox.Show("Xong");
-                ngatketNoi();
+              
                 MessageBox.Show("Sửa thành công");
             }
             catch
@@ -114,12 +90,11 @@ namespace baitaplon
             {
                 try
                 {
-                    ketNoi();
+                    
                     string del = "delete from TblBoPhan where MaBoPhan='" + textBox1.Text + "'";
-                    comd = new SqlCommand(del, cont);
-                    comd.ExecuteNonQuery();
+                    ck.thucthi(del);
                     MessageBox.Show("xoá thành công");
-                    ngatketNoi();
+                   
                 }
                 catch (Exception l)
                 {

@@ -13,31 +13,8 @@ namespace baitaplon
 {
     public partial class thuviec : Form
     {
-        string data;
-        SqlConnection cont;
-        SqlCommand comd;
-        SqlDataReader read;
-        DataTable dt;
-        SqlDataAdapter adap;
         check ck = new check();
-        public void getdata(string chuoi)
-        {
-            data = chuoi;
-        }
-        void ketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Mở
-            if (cont.State == ConnectionState.Closed)
-                cont.Open();
-        }
-        void ngatketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Đóng
-            if (cont.State == ConnectionState.Open)
-                cont.Close();
-        }
+      
 
         public thuviec()
         {
@@ -67,21 +44,20 @@ namespace baitaplon
             try
             {
                 errorProvider1.Clear();
-                ketNoi();
+               
                 if (ck.checkmatrung(txt1.Text, "TblHoSoThuViec", "MaNVTV"))
                 {
                     string insert = "insert into TblHoSoThuViec values('" + cbbmaphong.Text + "',N'" + txt1.Text + "',N'" + txt2.Text + "',N'" + dateTimePicker1.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + txt6.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + dateTimePicker2.Text + "',N'" + txt10.Text + "',N'" + txt11.Text + "')";
-                    comd = new SqlCommand(insert, cont);
-                    comd.ExecuteNonQuery();
+                    ck.thucthi(insert);
                     ck.loaddg("select * from TblHoSoThuViec", dataGridView1);
                     MessageBox.Show("Xong");
-                    ngatketNoi();
+                    
                 }
                 else
                 {
                     errorProvider1.SetError(txt1,"Mã nhân viên đã tồn tại");
                 }
-                ngatketNoi();
+               
             }
             catch(Exception p)
             {
@@ -104,13 +80,13 @@ namespace baitaplon
         {
             try
             {
-                ketNoi();
-                string update = "update TblHoSoThuViec set MaPhong=N'" + cbbmaphong.Text + "',HoTen=N'" + txt2.Text + "',NgaySinh=N'" + dateTimePicker1.Text + "',GioiTinh=N'" + txt4.Text + "',DiaChi=N'" + txt5.Text + "',TDHocVan=N'" + txt6.Text + "',HocHam=N'" + txt7.Text + "',ViTriThuViec=N'" + txt8.Text + "',NgayTV=N'" + dateTimePicker2.Text + "',ThangTV=N'" + txt10.Text + "',GhiChu=N'" + txt11.Text + "' where MaNVTV='" + txt1.Text + "'";
                
+                string update = "update TblHoSoThuViec set MaPhong=N'" + cbbmaphong.Text + "',HoTen=N'" + txt2.Text + "',NgaySinh=N'" + dateTimePicker1.Text + "',GioiTinh=N'" + txt4.Text + "',DiaChi=N'" + txt5.Text + "',TDHocVan=N'" + txt6.Text + "',HocHam=N'" + txt7.Text + "',ViTriThuViec=N'" + txt8.Text + "',NgayTV=N'" + dateTimePicker2.Text + "',ThangTV=N'" + txt10.Text + "',GhiChu=N'" + txt11.Text + "' where MaNVTV='" + txt1.Text + "'";
+                ck.thucthi(update);
                 ck.loaddg("select * from TblHoSoThuViec", dataGridView1);
-                ngatketNoi();
+                
                 MessageBox.Show("Sửa thành công");
-                ngatketNoi();
+              
             }
             catch
             {
@@ -123,15 +99,14 @@ namespace baitaplon
 
             try
             {
-                ketNoi();
+               
                 string del = "delete from TblHoSoThuViec where MaNVTV='" + txt1.Text + "'";
                 if (MessageBox.Show("Bạn có chắc chắn muốn xóa không", "Xóa dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    comd = new SqlCommand(del, cont);
-                    comd.ExecuteNonQuery();
+                    ck.thucthi(del);
                     ck.loaddg("select * from TblHoSoThuViec",dataGridView1);
                 }
-                ngatketNoi();
+               
             }
             catch
             {

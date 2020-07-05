@@ -17,9 +17,20 @@ namespace baitaplon
         SqlDataReader read;
         DataTable dt;
         SqlDataAdapter adap;
+        public void loadtextbox(TextBox cb, string sql,byte chiso)
+        {
+            ketNoi();
+            comd = new SqlCommand(sql, cont);
+            read = comd.ExecuteReader();
+            while (read.Read())
+            {
+                cb.Text = read[chiso].ToString();
+            }
+            ngatketNoi();
+        }
 
 
-        void ketNoi()
+       public void ketNoi()
         {
             cont = new SqlConnection(data);
           
@@ -27,7 +38,7 @@ namespace baitaplon
             if (cont.State == ConnectionState.Closed)
                 cont.Open();
         }
-        void ngatketNoi()
+      public  void ngatketNoi()
         {
             cont = new SqlConnection(data);
             // Đóng
@@ -49,6 +60,31 @@ namespace baitaplon
             return true;
         }
 
+        public void setdate(DateTimePicker dt,string sql)
+        {
+            ketNoi();
+            comd = new SqlCommand(sql, cont);
+            read = comd.ExecuteReader();
+            while (read.Read())
+            {
+                dt.Text = read[0].ToString();
+            }
+            ngatketNoi();
+        }
+
+        public void loadtxtcbb(ComboBox cb,string sl,int chiso)
+        {
+
+            ketNoi();
+            comd = new SqlCommand(sl, cont);
+            read = comd.ExecuteReader();
+            while (read.Read())
+            {
+                cb.Text = read[chiso].ToString();
+            }
+            ngatketNoi();
+
+        }
         public void loadcbb(ComboBox cb,int index,string sql)
         {
             ketNoi();
@@ -68,6 +104,13 @@ namespace baitaplon
             adap = new SqlDataAdapter(sql, data);
             adap.Fill(dt);
             d.DataSource = dt;
+            ngatketNoi();
+        }
+        public void thucthi(string sqlcode)
+        {
+            ketNoi();
+            comd = new SqlCommand(sqlcode, cont);
+            comd.ExecuteNonQuery();
             ngatketNoi();
         }
     }

@@ -41,7 +41,7 @@ namespace baitaplon
         private void xuiButton1_Click(object sender, EventArgs e)
         {
             tracuu l = new tracuu();
-            l.getdata(data);
+          
             l.ShowDialog();
         }
 

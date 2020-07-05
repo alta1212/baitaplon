@@ -84,7 +84,7 @@ namespace baitaplon
             Properties.Settings.Default.Upgrade();
             Properties.Settings.Default.Save();
          
-            try
+        //    try
             {
 
                 data = string.Format(@"Data Source=(local);Initial Catalog=qlns;Persist Security Info=True;User ID={0};Password={1}", txtid.Text, txtpass.Text);
@@ -97,10 +97,10 @@ namespace baitaplon
                 
 
             }
-           catch
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khảu");
-            }
+           //catch
+           // {
+           //     MessageBox.Show("Sai tên đăng nhập hoặc mật khảu");
+           // }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)

@@ -14,30 +14,7 @@ namespace baitaplon
 {
     public partial class tracuu : Form
     {
-        string data;
-        SqlConnection cont;
-        DataTable dt;
-        SqlDataAdapter adap;
-        public void getdata(string chuoi)
-        {
-            data = chuoi;
-
-        }
-        void ketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Mở
-            if (cont.State == ConnectionState.Closed)
-                cont.Open();
-        }
-        void ngatketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Đóng
-            if (cont.State == ConnectionState.Open)
-                cont.Close();
-        }
-
+        check ck = new check();
         public tracuu()
         {
             InitializeComponent();
@@ -45,17 +22,9 @@ namespace baitaplon
 
         private void tracuu_Load(object sender, EventArgs e)
         {
-            loaddta("select * from TblTTNVCoBan");
+            ck.loaddg("select * from TblTTNVCoBan",dataGridView1);
         }
-        void loaddta(string k)
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter(k, data);
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-            ngatketNoi();
-        }
+      
 
         private void xuiButton1_Click(object sender, EventArgs e)
         {
@@ -82,21 +51,21 @@ namespace baitaplon
                     if(i==1)
                     {
                         sql= "select * from TblTTNVCoBan where MaNV like N'%" + textBox1.Text + "%'";
-                        loaddta(sql);
+                        ck.loaddg(sql,dataGridView1 );
                     }
           
 
                     if (i == 2)
                     {
                         sql = "select * from TblTTNVCoBan where HoTen like N'%" + textBox1.Text + "%'";
-                        loaddta(sql);
+                        ck.loaddg(sql, dataGridView1);
                     }
                   
 
                     if (i == 3)
                     {
                         sql = "select * from TblTTNVCoBan where CMTND like N'%" + textBox1.Text + "%'";
-                        loaddta(sql);
+                        ck.loaddg(sql, dataGridView1);
                     }
 
                    

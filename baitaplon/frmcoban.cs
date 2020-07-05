@@ -24,38 +24,33 @@ namespace baitaplon
         {
             Close();
         }
-        string data;
-        SqlConnection cont;
-        SqlCommand comd;
-        SqlDataReader read;
-        DataTable dt;
-        SqlDataAdapter adap;
+      
         check ck = new check();
-        public void getdata(string chuoi)
-        {
-            data = chuoi;
+        //public void getdata(string chuoi)
+        //{
+        //    data = chuoi;
     
-        }
-        void ketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Mở
-            if (cont.State == ConnectionState.Closed)
-                cont.Open();
-        }
-        void ngatketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Đóng
-            if (cont.State == ConnectionState.Open)
-                cont.Close();
-        }
+        //}
+        //void ketNoi()
+        //{
+        //    cont = new SqlConnection(data);
+        //    // Mở
+        //    if (cont.State == ConnectionState.Closed)
+        //        cont.Open();
+        //}
+        //void ngatketNoi()
+        //{
+        //    cont = new SqlConnection(data);
+        //    // Đóng
+        //    if (cont.State == ConnectionState.Open)
+        //        cont.Close();
+        //}
 
         private void frmcoban_Load(object sender, EventArgs e)
         {
-            FillCombo("SELECT mabophan FROM TblBoPhan",cbbmbp);
-            FillCombo("select MaLuong from TblBangLuongCTy", cbbluong);
-            loaddatagirl();
+            ck.loadcbb(cbbmbp,0, "SELECT mabophan FROM TblBoPhan");
+            ck.loadcbb(cbbluong, 0, "select MaLuong from TblBangLuongCTy");
+            ck.loaddg("select * from TblTTNVCoBan", dataGridView1);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,15 +63,7 @@ namespace baitaplon
                 }
             }
         }
-        void loaddatagirl()
-        {
-            ketNoi();
-            dt = new DataTable();
-            adap = new SqlDataAdapter("select * from TblTTNVCoBan", data);
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-            ngatketNoi();
-        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
@@ -86,13 +73,12 @@ namespace baitaplon
                 errorProvider1.Clear();
                 try
                 { 
-                    ketNoi();
+                   
                     string insert = "insert into TblTTNVCoBan values(N'" + cbbmbp.Text + "',N'" + cbbmaphong.Text + "',N'" + txtmnv.Text + "',N'" + txthoten.Text + "',N'" + cbbluong.Text + "',N'" + datebirth.Text + "',N'" + cbbgioitinh.Text + "',N'" + txthonnhan.Text + "',N'" + txtcmt.Text + "',N'" + txtnoicap.Text + "',N'" + txtchucvu.Text + "',N'" + txthd.Text + "',N'" + txttime.Text + "',N'" + datengayvao.Text + "',N'" + datengayra.Text + "',N'" + txtghichu.Text + "')";
-               
-                    comd = new SqlCommand(insert, cont);
-                    comd.ExecuteNonQuery();
-                    loaddatagirl();
-                    MessageBox.Show("Đã thêm");
+
+                    ck.thucthi(insert);
+                        ck.loaddg("select * from TblTTNVCoBan", dataGridView1);
+                        MessageBox.Show("Đã thêm");
                     foreach (Control ctr in this.groupBox1.Controls)
                     {
                         if ((ctr is TextBox) || (ctr is DateTimePicker) || (ctr is ComboBox))
@@ -100,7 +86,7 @@ namespace baitaplon
                             ctr.Text = "";
                         }
                     }
-                    ngatketNoi();
+                  
                 }
                 catch(Exception p)
                 {
@@ -119,19 +105,7 @@ namespace baitaplon
    
 
         }
-        public void FillCombo(string sql,ComboBox com)
-        {
-            ketNoi();
-            comd = new SqlCommand(sql, cont);
-            read = comd.ExecuteReader();
-            while (read.Read())
-            {
-                com.Items.Add(read[0].ToString());
-            }
-
-            ngatketNoi();
-
-        }
+      
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -141,7 +115,7 @@ namespace baitaplon
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sql = string.Format("select p.MaPhong from TblBoPhan b,TblPhongBan p where b.MaBoPhan=p.MaBoPhan and p.MaBoPhan=N'{0}'",cbbmbp.Text);
-            FillCombo(sql,cbbmaphong);
+            ck.loadcbb(cbbmaphong,0,sql);
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -176,13 +150,12 @@ namespace baitaplon
         {
             try
             {
-                ketNoi();
-                string sql = string.Format("update TblTTNVCoBan set MaBoPhan=N'" + cbbmbp.Text + "',MaPhong=N'" + cbbmaphong.Text + "',HoTen=N'" + txthoten.Text + "',MaLuong=N'" + cbbluong.Text + "'," + "NgaySinh='" + datebirth.Value + "',GioiTinh=N'" + cbbgioitinh.Text + "',TTHonNhan=N'" + txthonnhan + "',CMTND=N'" + txtcmt.Text + "',NoiCap=N'" + txtnoicap.Text + "',ChucVu=N'"+ txtchucvu.Text+ "',LoaiHD=N'"+txthd.Text+"'," + "ThoiGian=N'"+txttime.Text+"',NgayKy='"+datengayvao.Value+"',NgayHetHan='"+datengayra.Value+"',GhiChu=N'"+txtghichu.Text+"' where MaNV=N'"+txtmnv.Text+"'"); 
-                comd = new SqlCommand(sql, cont);
-                comd.ExecuteNonQuery();
-                loaddatagirl();
+             
+                string sql = string.Format("update TblTTNVCoBan set MaBoPhan=N'" + cbbmbp.Text + "',MaPhong=N'" + cbbmaphong.Text + "',HoTen=N'" + txthoten.Text + "',MaLuong=N'" + cbbluong.Text + "'," + "NgaySinh='" + datebirth.Value + "',GioiTinh=N'" + cbbgioitinh.Text + "',TTHonNhan=N'" + txthonnhan + "',CMTND=N'" + txtcmt.Text + "',NoiCap=N'" + txtnoicap.Text + "',ChucVu=N'"+ txtchucvu.Text+ "',LoaiHD=N'"+txthd.Text+"'," + "ThoiGian=N'"+txttime.Text+"',NgayKy='"+datengayvao.Value+"',NgayHetHan='"+datengayra.Value+"',GhiChu=N'"+txtghichu.Text+"' where MaNV=N'"+txtmnv.Text+"'");
+                ck.thucthi(sql);
+                ck.loaddg("select * from TblTTNVCoBan", dataGridView1);
                 MessageBox.Show("Xong");
-                ngatketNoi();
+    
             }
             catch
             {
@@ -198,10 +171,7 @@ namespace baitaplon
             {
                 try
                 {
-                    ketNoi();
-                    comd = new SqlCommand(sql,cont);
-                    comd.ExecuteNonQuery();
-                    ngatketNoi();
+                    ck.thucthi(sql) ;
                     MessageBox.Show("Đã xoá");
                     dataGridView1.Refresh();
                 }

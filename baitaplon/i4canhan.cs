@@ -18,31 +18,9 @@ namespace baitaplon
         {
             InitializeComponent();
         }
-        string data;
-        SqlConnection cont;
-        SqlCommand comd;
-        SqlDataReader read;
-        DataTable dt;
-        SqlDataAdapter adap;
+     
         check ck = new check();
-        public void getdata(string chuoi)
-        {
-            data = chuoi;
-        }
-        void ketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Mở
-            if (cont.State == ConnectionState.Closed)
-                cont.Open();
-        }
-        void ngatketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Đóng
-            if (cont.State == ConnectionState.Open)
-                cont.Close();
-        }
+     
 
      
         private void button4_Click(object sender, EventArgs e)
@@ -96,9 +74,7 @@ namespace baitaplon
             string sql = "update TblTTCaNhan set Noisinh=N'" + txtnoisinh.Text + "',NguyenQuan=N'" + txtnguyenquan.Text + "',DCThuongChu=N'" + txtdiachi.Text + "',DCTamChu=N'" + txtdiachitamtru.Text + "',SDT=N'" + txtsdt.Text + "',DanToc=N'" + txtdantoc.Text + "',TonGiao=N'"+txttongiao.Text+ "',QuocTich=N'"+txtquoctich.Text+"',HocVan=N'"+txthocvan.Text+"',GhiChu=N'"+txtghichu.Text+"' where MaNV=N'"+cbbmnv.Text+"'";
           try
             {
-                ketNoi();
-                comd = new SqlCommand(sql,cont);
-                comd.ExecuteNonQuery();
+                ck.thucthi(sql) ;
 
                 foreach (Control ctr in this.groupBox1.Controls)
                 {
@@ -109,7 +85,7 @@ namespace baitaplon
                 }
                 ck.loaddg("select * from TblTTCaNhan", dataGridView1);
                 MessageBox.Show("xong");
-                ngatketNoi();
+               
                 
             }
             catch
@@ -131,10 +107,7 @@ namespace baitaplon
             {
                 try
                 {
-                    ketNoi();
-                    comd = new SqlCommand(sql, cont);
-                    comd.ExecuteNonQuery();
-                    ngatketNoi();
+                    ck.thucthi(sql);
                     MessageBox.Show("Đã xoá");
                     dataGridView1.Refresh();
                 }

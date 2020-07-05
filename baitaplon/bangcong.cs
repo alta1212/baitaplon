@@ -14,31 +14,6 @@ namespace baitaplon
     public partial class bangcong : Form
     {
         check ck = new check();
-        string data;
-        SqlConnection cont;
-        SqlCommand comd;
-        SqlDataReader read;
-        DataTable dt;
-        SqlDataAdapter adap;
-        public void getdata(string chuoi)
-        {
-            data = chuoi;
-
-        }
-        void ketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Mở
-            if (cont.State == ConnectionState.Closed)
-                cont.Open();
-        }
-        void ngatketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Đóng
-            if (cont.State == ConnectionState.Open)
-                cont.Close();
-        }
         public bangcong()
         {
             InitializeComponent();
@@ -69,13 +44,12 @@ namespace baitaplon
                 errorProvider1.Clear();
                 try
                 {
-                    ketNoi();
+                  
                     string insert = "insert into TblBangCongThuViec values(N'" + txt1.Text + "',N'" + txt2.Text + "',N'" + cbbmnv1.Text + "',N'" + txt3.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + txt6.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + textBox3.Text + "',N'" + txt9.Text + "')";
-                    comd = new SqlCommand(insert, cont);
-                    read = comd.ExecuteReader();
+                        ck.thucthi(insert);
                         ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
                     MessageBox.Show("Xong");
-                    ngatketNoi();
+                  
                 }
                 catch (Exception ll)
                 {
@@ -94,18 +68,9 @@ namespace baitaplon
 
 
         }
-        void loadcbb(ComboBox m,string sql)
-        {
-            ketNoi();
-            comd = new SqlCommand(sql,cont);
-            read = comd.ExecuteReader();
-            while (read.Read())
-            {
-                m.Items.Add(read[0].ToString());
-            }
 
-            ngatketNoi();
-        }
+          
+
         private void bangcong_Load(object sender, EventArgs e)
         {
             ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
@@ -118,13 +83,12 @@ namespace baitaplon
         {
             try
             {
-                ketNoi();
+              
                 string update = "update TblBangCongThuViec set TenBoPhan=N'" + txt1.Text + "',TenPhong=N'" + txt2.Text + "',LuongTViec=N'" + txt3.Text + "',Thang=N'" + txt4.Text + "',Nam='" + txt5.Text + "',SoNgayCong=N'" + txt6.Text + "',SoNgayNghi=N'" + txt7.Text + "',SoGioLamThem=N'" + txt8.Text + "',Luong=N'" + textBox3.Text + "',GhiChu='" + txt9.Text + "' where MaNVTV=N'" + cbbmnv1.Text + "'";
-                comd = new SqlCommand(update,cont);
-                comd.ExecuteNonQuery();
+                ck.thucthi(update);
                 ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
                 MessageBox.Show("Sửa thành công");
-                ngatketNoi();
+              
             }
             catch(Exception s)
             {
@@ -160,13 +124,12 @@ namespace baitaplon
         {
             try
             {
-                ketNoi();
+              
                 string delete = "delete from TblBangCongThuViec where MaNVTV=N'" + cbbmnv1.Text + "'";
-                comd = new SqlCommand(delete, cont);
-                comd.ExecuteNonQuery();
+                ck.thucthi(delete);
                 MessageBox.Show("Xong");
                 ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
-                ngatketNoi();
+               
             }
             catch(Exception s)
             {
@@ -175,64 +138,59 @@ namespace baitaplon
         }
 
         private void xuiButton6_Click(object sender, EventArgs e)
-        {
-            int l = Convert.ToInt32(txt3.Text);
-            int nc = Convert.ToInt32(txt6.Text);
-            int lt = Convert.ToInt32(txt8.Text);
-            float luong = ((l / 26) * nc + (lt * 40000));
-            textBox3.Text = luong.ToString();
+        {try
+            {
+                 int l = Convert.ToInt32(txt3.Text);
+                int nc = Convert.ToInt32(txt6.Text);
+                int lt = Convert.ToInt32(txt8.Text);
+                float luong = ((l / 26) * nc + (lt * 40000));
+                textBox3.Text = luong.ToString();
+            }    
+            catch
+            {
+
+            }
+          
         }
 
         private void cbbmnv1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           loadtextbox(txt2, "select * from TblPhongBan b,TblHoSoThuViec a where a.MaPhong=b.MaPhong and MaNVTV='" +cbbmnv1.Text + "'", 2);
-           loadtextbox(txt1, "select * from TblBoPhan,TblPhongBan where TblPhongBan.MaBoPhan=TblBoPhan.MaBoPhan and TenPhong=N'" + txt2.Text + "'", 1);
-           loadtextbox(txt3, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 3);
-           loadtextbox(txt4, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 4);
-           loadtextbox(txt5, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 5);
-           loadtextbox(txt6, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 6);
-           loadtextbox(txt7, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 7);
-           loadtextbox(txt8, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 8);
-           loadtextbox(textBox3, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 9);
-           loadtextbox(txt9, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 10);
+           ck.loadtextbox(txt2, "select * from TblPhongBan b,TblHoSoThuViec a where a.MaPhong=b.MaPhong and MaNVTV='" +cbbmnv1.Text + "'", 2);
+           ck.loadtextbox(txt1, "select * from TblBoPhan,TblPhongBan where TblPhongBan.MaBoPhan=TblBoPhan.MaBoPhan and TenPhong=N'" + txt2.Text + "'", 1);
+           ck.loadtextbox(txt3, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 3);
+           ck.loadtextbox(txt4, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 4);
+           ck.loadtextbox(txt5, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 5);
+           ck.loadtextbox(txt6, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 6);
+           ck.loadtextbox(txt7, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 7);
+           ck.loadtextbox(txt8, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 8);
+           ck.loadtextbox(textBox3, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 9);
+           ck.loadtextbox(txt9, "select * from TblBangCongThuViec where MaNVTV='" +cbbmnv1.Text + "'", 10);
         }
-        void loadtextbox(TextBox cb, string sql,byte chiso)
-        {
-            ketNoi();
-            comd = new SqlCommand(sql, cont);
-            read = comd.ExecuteReader();
-            while (read.Read())
-            {
-                cb.Text = read[chiso].ToString();
-            }
-            ngatketNoi();
-        }
+
 
         private void cbbmnv2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadtextbox(txt50, "select * from TblTTNVCoBan where MaNV='" + cbbmnv2.Text + "'", 4);
-            loadtextbox(txt10, "select * from TblBangLuongCTy l where l.MaLuong='" + txt50.Text + "'", 1);
-            loadtextbox(txt11, "select * from TblBangLuongCTy l where l.MaLuong='" + txt50.Text + "'", 2);
-            //loadtextbox(txt10, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 4);
-            loadtextbox(txt53, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 2);
-            //loadtextbox(txt51, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 3);
-            // loadtextbox(txt11, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 5);
-            loadtextbox(txt12, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 6);
-            loadtextbox(textBox1, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 7);
-            loadtextbox(textBox2, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 8);
-            loadtextbox(txt13, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 9);
-            loadtextbox(txt14, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 10);
-            loadtextbox(txt15, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 11);
-            loadtextbox(txt16, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 12);
-            loadtextbox(txt17, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 13);
-            loadtextbox(txt52, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 14);
-            loadtextbox(txt18, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 15);
+            ck.loadtextbox(txt50, "select * from TblTTNVCoBan where MaNV='" + cbbmnv2.Text + "'", 4);
+            ck.loadtextbox(txt10, "select * from TblBangLuongCTy l where l.MaLuong='" + txt50.Text + "'", 1);
+            ck.loadtextbox(txt11, "select * from TblBangLuongCTy l where l.MaLuong='" + txt50.Text + "'", 2);
+            ck.loadtextbox(txt53, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 2);
+            ck.loadtextbox(txt12, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 6);
+            ck.loadtextbox(textBox1, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 7);
+            ck.loadtextbox(textBox2, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 8);
+            ck.loadtextbox(txt13, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 9);
+            ck.loadtextbox(txt14, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 10);
+            ck.loadtextbox(txt15, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 11);
+            ck.loadtextbox(txt16, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 12);
+            ck.loadtextbox(txt17, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 13);
+            ck.loadtextbox(txt52, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 14);
+            ck.loadtextbox(txt18, "select * from TblCongKhoiDieuHanh where MaNV='" + cbbmnv2.Text + "'", 15);
         }
 
         private void cbbtenphong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadcbb(cbbmnv2, "select MaNV from TblCongKhoiDieuHanh where TenPhong=(select TenPhong from TblPhongBan a, TblTTNVCoBan b where a.MaPhong=b.MaPhong and a.TenPhong=N'" + cbbtenphong.Text + "' group by TenPhong)");
-            for(int i =0; i<groupBox4.Controls.Count;i++)
+            string sql="select MaNV from TblCongKhoiDieuHanh where TenPhong=(select TenPhong from TblPhongBan a, TblTTNVCoBan b where a.MaPhong=b.MaPhong and a.TenPhong=N'" + cbbtenphong.Text + "' group by TenPhong)";
+            ck.loadcbb(cbbmnv2, 0, sql);
+            for (int i =0; i<groupBox4.Controls.Count;i++)
             {
                 if (groupBox4.Controls[i] is TextBox)
                     groupBox4.Controls[i].ResetText();
@@ -261,13 +219,12 @@ namespace baitaplon
         {
             try
             {
-                ketNoi();
+                
                 string update = "update TblCongKhoiDieuHanh set  MaLuong=N'" + txt50.Text + "',TenPhong=N'" + cbbtenphong.Text + "', HoTen=N'" + txt53.Text + "',LCB=N'" + txt10.Text + "',PCChucVu=N'" + txt11.Text + "',PCapKhac=N'" + txt12.Text + "',Thuong=N'" + textBox1.Text + "',KyLuat='" + textBox2.Text + "',Thang=N'" + txt13.Text + "',Nam='" + txt14.Text + "',SoNgayCongThang=N'" + txt15.Text + "',SoNgayNghi=N'" + txt16.Text + "',SoGioLamThem=N'" + txt17.Text + "',Luong=N'" + txt52.Text + "',GhiChu='" + txt18.Text + "' where MaNV=N'" + cbbmnv2.Text + "'";
-                comd = new SqlCommand(update, cont);
-                comd.ExecuteNonQuery();
+                ck.thucthi(update);
                 ck.loaddg("select * from TblCongKhoiDieuHanh", dataGridView2);
                 MessageBox.Show("Sửa thành công");
-                ngatketNoi();
+                
             }
             catch(Exception f)
             {
@@ -279,15 +236,14 @@ namespace baitaplon
         {
             try
             {
-                ketNoi();
+              
                 string delete = "delete from TblCongKhoiDieuHanh where MaNV=N'" + cbbmnv2.Text + "'";
                 if (MessageBox.Show("Bạn có muốn xóa không", "Xóa dữ liệu", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    comd = new SqlCommand(delete,cont);
-                    comd.ExecuteNonQuery();
+                    ck.thucthi(delete);
                     ck.loaddg("select * from TblCongKhoiDieuHanh", dataGridView2);
                 }
-                ngatketNoi();
+              
             }
             catch (Exception s)
             {
