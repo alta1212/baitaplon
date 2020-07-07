@@ -54,7 +54,7 @@ namespace baitaplon
                         ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
                      
                     }
-                    catch (Exception s)
+                    catch
                     {
                         MessageBox.Show("dữ liệu đầu vào không hợp lệ");
                     }

@@ -138,12 +138,13 @@ namespace baitaplon
         }
 
         private void xuiButton6_Click(object sender, EventArgs e)
-        {try
+        {
+            try
             {
-                 int l = Convert.ToInt32(txt3.Text);
+                int l = Convert.ToInt32(txt3.Text);
                 int nc = Convert.ToInt32(txt6.Text);
                 int lt = Convert.ToInt32(txt8.Text);
-                float luong = ((l / 26) * nc + (lt * 40000));
+                float luong = ((l / 26) * nc + (lt * int.Parse(txt3.Text)));
                 textBox3.Text = luong.ToString();
             }    
             catch
@@ -261,7 +262,7 @@ namespace baitaplon
             int th = Convert.ToInt32(textBox1.Text);
             int kl = Convert.ToInt32(textBox2.Text);
 
-            float luong = ((lcb / 26) * nc + (lt * 40000) + pc + pck + th - kl);
+            float luong = ((lcb / 26) * nc + (lt * ck.getluong(txt50.Text)) + pc + pck + th - kl);
             txt52.Text = luong.ToString();
         }
 

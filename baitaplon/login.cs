@@ -20,8 +20,6 @@ namespace baitaplon
         }
         string data;
         SqlConnection cont;
-        SqlCommand comd;
-        SqlDataReader read;
         DataTable dt;
         SqlDataAdapter sqladt;
 

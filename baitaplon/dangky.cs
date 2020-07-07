@@ -16,9 +16,6 @@ namespace baitaplon
         string data;
         SqlConnection cont;
         SqlCommand comd;
-        SqlDataReader read;
-        DataTable dt;
-        SqlDataAdapter adap;
         string quyen;
         public void getdata(string chuoi,string per)
         {

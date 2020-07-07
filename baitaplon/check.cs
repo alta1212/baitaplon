@@ -59,7 +59,20 @@ namespace baitaplon
             }    
             return true;
         }
-
+        public int getluong(string maluong)
+        {  
+              ketNoi();
+            int luong=0;
+            string sql = string.Format("select lcb from TblBangLuongCTy where MaLuong ='{0}'",maluong);
+            comd = new SqlCommand(sql, cont);
+            read = comd.ExecuteReader();
+            if (read.Read())
+            {
+                luong =int.Parse(read[0].ToString());
+            }
+            ngatketNoi();
+            return luong;
+        }
         public void setdate(DateTimePicker dt,string sql)
         {
             ketNoi();
@@ -99,6 +112,7 @@ namespace baitaplon
         }
         public void loaddg(string sql,DataGridView d)
         {
+            
             ketNoi();
             dt = new DataTable();
             adap = new SqlDataAdapter(sql, data);

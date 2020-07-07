@@ -48,14 +48,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\Documents\ui\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,6 +101,12 @@
     </Compile>
     <Compile Include="chucnanglist.Designer.cs">
       <DependentUpon>chucnanglist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="dangky.cs">
       <SubType>Form</SubType>
@@ -163,6 +176,18 @@
     <Compile Include="quanlylist.Designer.cs">
       <DependentUpon>quanlylist.cs</DependentUpon>
     </Compile>
+    <Compile Include="thoiviec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thoiviec.Designer.cs">
+      <DependentUpon>thoiviec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="thongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongke.Designer.cs">
+      <DependentUpon>thongke.cs</DependentUpon>
+    </Compile>
     <Compile Include="thuviec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +211,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="chucnanglist.resx">
       <DependentUpon>chucnanglist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="dangky.resx">
       <DependentUpon>dangky.cs</DependentUpon>
@@ -229,6 +258,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="quanlylist.resx">
       <DependentUpon>quanlylist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thoiviec.resx">
+      <DependentUpon>thoiviec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="thongke.resx">
+      <DependentUpon>thongke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="thuviec.resx">
       <DependentUpon>thuviec.cs</DependentUpon>
@@ -293,6 +328,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kisspng-macbook-pro-font-awesome-computer-icons-computer-m-computer-icon-5abf12a52954a8.6155517315224715891693 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

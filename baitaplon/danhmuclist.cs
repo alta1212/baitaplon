@@ -46,6 +46,12 @@ namespace baitaplon
             l.ShowDialog();
         }
 
+        private void xuiButton5_Click(object sender, EventArgs e)
+        {
+            thoiviec k = new thoiviec();
+            k.ShowDialog();
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             thuviec l = new thuviec();

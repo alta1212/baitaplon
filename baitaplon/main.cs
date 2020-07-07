@@ -114,6 +114,12 @@ namespace baitaplon
 
         }
 
+        private void bunifuTileButton6_Click(object sender, EventArgs e)
+        {
+            thongke k = new thongke();
+            k.ShowDialog();
+        }
+
         private void bunifuTileButton5_Click(object sender, EventArgs e)
         {
             qltklist l = new qltklist();

@@ -33,6 +33,7 @@
             this.xuiButton2 = new XanderUI.XUIButton();
             this.xuiButton3 = new XanderUI.XUIButton();
             this.xuiButton4 = new XanderUI.XUIButton();
+            this.xuiButton5 = new XanderUI.XUIButton();
             this.SuspendLayout();
             // 
             // xuiButton1
@@ -71,7 +72,7 @@
             this.xuiButton2.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.xuiButton2.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.xuiButton2.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton2.Location = new System.Drawing.Point(12, 148);
+            this.xuiButton2.Location = new System.Drawing.Point(12, 78);
             this.xuiButton2.Name = "xuiButton2";
             this.xuiButton2.Size = new System.Drawing.Size(163, 50);
             this.xuiButton2.TabIndex = 1;
@@ -115,7 +116,7 @@
             this.xuiButton4.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.xuiButton4.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.xuiButton4.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.xuiButton4.Location = new System.Drawing.Point(197, 148);
+            this.xuiButton4.Location = new System.Drawing.Point(12, 148);
             this.xuiButton4.Name = "xuiButton4";
             this.xuiButton4.Size = new System.Drawing.Size(171, 50);
             this.xuiButton4.TabIndex = 3;
@@ -123,11 +124,34 @@
             this.xuiButton4.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.xuiButton4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // xuiButton5
+            // 
+            this.xuiButton5.BackgroundColor = System.Drawing.Color.White;
+            this.xuiButton5.ButtonImage = ((System.Drawing.Image)(resources.GetObject("xuiButton5.ButtonImage")));
+            this.xuiButton5.ButtonStyle = XanderUI.XUIButton.Style.MacOS;
+            this.xuiButton5.ButtonText = "Nghỉ việc";
+            this.xuiButton5.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.xuiButton5.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton5.CornerRadius = 5;
+            this.xuiButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.xuiButton5.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton5.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.xuiButton5.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.xuiButton5.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.xuiButton5.Location = new System.Drawing.Point(197, 78);
+            this.xuiButton5.Name = "xuiButton5";
+            this.xuiButton5.Size = new System.Drawing.Size(171, 50);
+            this.xuiButton5.TabIndex = 4;
+            this.xuiButton5.TextColor = System.Drawing.Color.Black;
+            this.xuiButton5.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.xuiButton5.Click += new System.EventHandler(this.xuiButton5_Click);
+            // 
             // danhmuclist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 210);
+            this.Controls.Add(this.xuiButton5);
             this.Controls.Add(this.xuiButton4);
             this.Controls.Add(this.xuiButton3);
             this.Controls.Add(this.xuiButton2);
@@ -146,5 +170,6 @@
         private XanderUI.XUIButton xuiButton2;
         private XanderUI.XUIButton xuiButton3;
         private XanderUI.XUIButton xuiButton4;
+        private XanderUI.XUIButton xuiButton5;
     }
 }
