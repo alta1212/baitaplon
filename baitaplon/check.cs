@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
@@ -96,6 +97,43 @@ namespace baitaplon
             ngatketNoi();
         }
 
+        public void loadrpnvct(string sql,string val)
+        {
+            read.Close();
+
+            ketNoi();
+            comd.CommandText = sql;
+            comd.Parameters.Clear();
+            comd.Parameters.AddWithValue("@mabophan", val);
+            adap = new SqlDataAdapter();
+            adap.SelectCommand = comd;
+            dt = new DataTable("nhanvien");
+
+            adap.Fill(dt);
+            //gắn data src cho rptthongke
+            crthongkenhanvienct thongke = new crthongkenhanvienct();
+            thongke.SetDataSource(dt);
+            ngatketNoi();
+        }
+        public void loadrpnvluong(string sql, string val)
+        {
+            read.Close();
+
+            ketNoi();
+            comd.CommandText = sql;
+            comd.Parameters.Clear();
+            comd.Parameters.AddWithValue("@mabophan", val);
+            adap = new SqlDataAdapter();
+            adap.SelectCommand = comd;
+            dt = new DataTable("nhanvien");
+
+            adap.Fill(dt);
+            //gắn data src cho rptthongke
+            crthongkenhanvienct thongke = new crthongkenhanvienct();
+            thongke.SetDataSource(dt);
+            ngatketNoi();
+        }
+     
         public void loadtxtcbb(ComboBox cb,string sl,int chiso)
         {
 
@@ -123,7 +161,7 @@ namespace baitaplon
         }
         public void loaddg(string sql,DataGridView d)
         {
-            
+            d.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ketNoi();
             dt = new DataTable();
             adap = new SqlDataAdapter(sql, data);

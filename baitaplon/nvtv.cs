@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace baitaplon
 {
-    public partial class thongkelist : Form
+    public partial class nvtv : Form
     {
-        public thongkelist()
+        public nvtv()
         {
             InitializeComponent();
         }

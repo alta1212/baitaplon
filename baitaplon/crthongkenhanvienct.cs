@@ -16,14 +16,14 @@ namespace baitaplon {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class crthongkenhanvienct : ReportClass {
         
-        public CrystalReport1() {
+        public crthongkenhanvienct() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "crthongkenhanvienct.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace baitaplon {
         
         public override string FullResourceName {
             get {
-                return "baitaplon.CrystalReport1.rpt";
+                return "baitaplon.crthongkenhanvienct.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace baitaplon {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class Cachedcrthongkenhanvienct : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public Cachedcrthongkenhanvienct() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace baitaplon {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            crthongkenhanvienct rpt = new crthongkenhanvienct();
             rpt.Site = this.Site;
             return rpt;
         }

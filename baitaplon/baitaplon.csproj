@@ -102,10 +102,11 @@
     <Compile Include="chucnanglist.Designer.cs">
       <DependentUpon>chucnanglist.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="crthongkenhanvienct.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>crthongkenhanvienct.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="dangky.cs">
       <SubType>Form</SubType>
@@ -124,6 +125,18 @@
     </Compile>
     <Compile Include="doipass.Designer.cs">
       <DependentUpon>doipass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formthongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formthongke.Designer.cs">
+      <DependentUpon>formthongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formthongkenv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formthongkenv.Designer.cs">
+      <DependentUpon>formthongkenv.cs</DependentUpon>
     </Compile>
     <Compile Include="frmbophan.cs">
       <SubType>Form</SubType>
@@ -149,11 +162,23 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="luong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>luong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="main.Designer.cs">
       <DependentUpon>main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nvtv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nvtv.Designer.cs">
+      <DependentUpon>nvtv.cs</DependentUpon>
     </Compile>
     <Compile Include="phongban.cs">
       <SubType>Form</SubType>
@@ -181,17 +206,19 @@
     <Compile Include="thoiviec.Designer.cs">
       <DependentUpon>thoiviec.cs</DependentUpon>
     </Compile>
-    <Compile Include="thongke.cs">
-      <SubType>Form</SubType>
+    <Compile Include="thongkedsnvct.cs">
+      <DependentUpon>thongkedsnvct.xsd</DependentUpon>
     </Compile>
-    <Compile Include="thongke.Designer.cs">
-      <DependentUpon>thongke.cs</DependentUpon>
+    <Compile Include="thongkedsnvct.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>thongkedsnvct.xsd</DependentUpon>
     </Compile>
-    <Compile Include="thongkelist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="thongkelist.Designer.cs">
-      <DependentUpon>thongkelist.cs</DependentUpon>
+    <Compile Include="crtthongkethuviec.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crtthongkethuviec.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="thuviec.cs">
       <SubType>Form</SubType>
@@ -217,9 +244,9 @@
     <EmbeddedResource Include="chucnanglist.resx">
       <DependentUpon>chucnanglist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="crthongkenhanvienct.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>crthongkenhanvienct.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="dangky.resx">
       <DependentUpon>dangky.cs</DependentUpon>
@@ -229,6 +256,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="doipass.resx">
       <DependentUpon>doipass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formthongke.resx">
+      <DependentUpon>formthongke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formthongkenv.resx">
+      <DependentUpon>formthongkenv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmbophan.resx">
       <DependentUpon>frmbophan.cs</DependentUpon>
@@ -242,8 +275,15 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="luong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>luong.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nvtv.resx">
+      <DependentUpon>nvtv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="phongban.resx">
       <DependentUpon>phongban.cs</DependentUpon>
@@ -267,8 +307,9 @@
     <EmbeddedResource Include="thoiviec.resx">
       <DependentUpon>thoiviec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="thongke.resx">
-      <DependentUpon>thongke.cs</DependentUpon>
+    <EmbeddedResource Include="crtthongkethuviec.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crtthongkethuviec.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="thuviec.resx">
       <DependentUpon>thuviec.cs</DependentUpon>
@@ -285,6 +326,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="thongkedsnvct.xsc">
+      <DependentUpon>thongkedsnvct.xsd</DependentUpon>
+    </None>
+    <None Include="thongkedsnvct.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>thongkedsnvct.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="thongkedsnvct.xss">
+      <DependentUpon>thongkedsnvct.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

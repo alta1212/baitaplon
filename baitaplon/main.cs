@@ -67,7 +67,6 @@ namespace baitaplon
         private void bunifuTileButton4_Click(object sender, EventArgs e)
         {
             quanlylist l = new quanlylist();
-          
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;
@@ -93,9 +92,13 @@ namespace baitaplon
 
         private void bunifuTileButton6_Click(object sender, EventArgs e)
         {
-            thongke k = new thongke();
-            k.ShowDialog();
-         
+            formthongkenv k = new formthongkenv();
+            pannelmenu.Controls.Clear();
+            k.TopLevel = false;
+            k.Dock = DockStyle.Fill;
+            pannelmenu.Controls.Add(k);
+            k.Show();
+
         }
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)

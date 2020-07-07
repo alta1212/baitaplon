@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace baitaplon
 {
-    public partial class thongke : Form
+    public partial class formthongke : Form
     {
-        check ck = new check();
-        public thongke()
+        public formthongke()
         {
             InitializeComponent();
         }
 
-        private void thongke_Load(object sender, EventArgs e)
+        private void crthongkenhanvienct2_InitReport(object sender, EventArgs e)
         {
-            ck.report();
-            crystalReportViewer1.ReportSource = crystalReportViewer1;
-            crystalReportViewer1.Refresh(); 
+
         }
     }
 }
