@@ -12,7 +12,7 @@ namespace baitaplon
 {
     public partial class danhmuclist : Form
     {
-        string data,per;
+   
         public danhmuclist()
         {
             InitializeComponent();
@@ -27,11 +27,6 @@ namespace baitaplon
         private void danhmuclist_Load(object sender, EventArgs e)
         {
           
-        }
-        public void getdata(string sql,string quyen)
-        {
-            per = quyen;
-            data = sql;
         }
 
         private void button2_Click(object sender, EventArgs e)

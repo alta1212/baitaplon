@@ -74,31 +74,33 @@ namespace baitaplon
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
+        {   
             Properties.Settings.Default.id = txtid.Text;
             Properties.Settings.Default.pass = txtpass.Text;
             Properties.Settings.Default.check = ch.Checked;
+
             Properties.Settings.Default.Save();
             Properties.Settings.Default.Upgrade();
             Properties.Settings.Default.Save();
          
-        //    try
+          try
             {
 
                 data = string.Format(@"Data Source=(local);Initial Catalog=qlns;Persist Security Info=True;User ID={0};Password={1}", txtid.Text, txtpass.Text);
+                Properties.Settings.Default.data = data;
                 ketNoi();
+                Properties.Settings.Default.per = check();
                 Hide();
                 main l = new main();
-                l.getdata(data,check(),txtid.Text);
                 l.ShowDialog();
                 Close();
-                
+            
 
             }
-           //catch
-           // {
-           //     MessageBox.Show("Sai tên đăng nhập hoặc mật khảu");
-           // }
+            catch
+            {
+                MessageBox.Show("sai tên đăng nhập hoặc mật khảu");
+            }
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)

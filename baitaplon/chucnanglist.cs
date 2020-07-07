@@ -18,12 +18,7 @@ namespace baitaplon
         {
             InitializeComponent();
         }
-        public void getdata(string chuoi,string quyen)
-        {
-            per = quyen;
-            data = chuoi;
-            Clipboard.SetText(data);
-        }
+     
         private void xuiButton2_MouseHover(object sender, EventArgs e)
         {
         }

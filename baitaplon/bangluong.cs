@@ -50,7 +50,7 @@ namespace baitaplon
                         errorProvider1.Clear();
                         string insert = "insert into TblBangLuongCTy values(N'" + txt1.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + dateTimePicker1.Text + "',N'" + txt6.Text + "',N'" + dateTimePicker2.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + dateTimePicker3.Text + "',N'" + txt9.Text + "')";
                         ck.thucthi(insert);
-                        MessageBox.Show("xong");
+                   
                         ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
                      
                     }
@@ -86,8 +86,7 @@ namespace baitaplon
                 string update = "update TblBangLuongCTy set LCB=N'" + txt4.Text + "',PCChucVu=N'" + txt5.Text + "',NgayNhap='" + dateTimePicker1.Text + "',LCBMoi=N'" + txt6.Text + "',NgaySua=N'" + dateTimePicker2.Text + "',LyDo=N'" + txt7.Text + "',PCCVuMoi='" + txt8.Text + "',NgaySuaPC=N'" + dateTimePicker3.Text + "',GhiChu=N'" + txt9.Text + "' where MaLuong=N'" + txt1.Text + "'";
                 ck.thucthi(update);
                 ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
-                MessageBox.Show("Sửa thành công");
-             
+            
             }
             catch(Exception l)
             {
@@ -151,7 +150,7 @@ namespace baitaplon
                 {
                     ck.thucthi(delete);
                     ck.loaddg("select * from TblBangLuongCTy", dataGridView1);
-                    MessageBox.Show("Đã xoá");
+                 
                 }
             }
             catch (Exception l)
@@ -185,7 +184,7 @@ namespace baitaplon
                     ck.thucthi(up);
 
                 ck.loaddg("select * from TblTangLuong", dg2);
-                MessageBox.Show("Đã thêm");
+           
               
                 comboBox1.Items.Clear();
                 ck.loadcbb(comboBox1,2, "select * from TblTTNVCoBan where MaNV not in (select MaNV from TblTangLuong )");
@@ -233,7 +232,7 @@ namespace baitaplon
                 string up = "update TblTTNVCoBan set MaLuong=N'" + cbbmlm.Text + "' where MaNV='" + comboBox1.Text + "'";
                 ck.thucthi(up);
                 ck.loaddg("select * from TblTangLuong", dg2);
-                MessageBox.Show("Sửa thành công");
+               
              
             }
             catch

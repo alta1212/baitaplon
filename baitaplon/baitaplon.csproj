@@ -106,7 +106,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="dangky.cs">
       <SubType>Form</SubType>
@@ -187,6 +186,12 @@
     </Compile>
     <Compile Include="thongke.Designer.cs">
       <DependentUpon>thongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="thongkelist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="thongkelist.Designer.cs">
+      <DependentUpon>thongkelist.cs</DependentUpon>
     </Compile>
     <Compile Include="thuviec.cs">
       <SubType>Form</SubType>

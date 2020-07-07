@@ -48,7 +48,7 @@ namespace baitaplon
                     string insert = "insert into TblBangCongThuViec values(N'" + txt1.Text + "',N'" + txt2.Text + "',N'" + cbbmnv1.Text + "',N'" + txt3.Text + "',N'" + txt4.Text + "',N'" + txt5.Text + "',N'" + txt6.Text + "',N'" + txt7.Text + "',N'" + txt8.Text + "',N'" + textBox3.Text + "',N'" + txt9.Text + "')";
                         ck.thucthi(insert);
                         ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
-                    MessageBox.Show("Xong");
+                  
                   
                 }
                 catch (Exception ll)
@@ -127,7 +127,7 @@ namespace baitaplon
               
                 string delete = "delete from TblBangCongThuViec where MaNVTV=N'" + cbbmnv1.Text + "'";
                 ck.thucthi(delete);
-                MessageBox.Show("Xong");
+           
                 ck.loaddg("select * from TblBangCongThuViec", dataGridView1);
                
             }
@@ -224,7 +224,7 @@ namespace baitaplon
                 string update = "update TblCongKhoiDieuHanh set  MaLuong=N'" + txt50.Text + "',TenPhong=N'" + cbbtenphong.Text + "', HoTen=N'" + txt53.Text + "',LCB=N'" + txt10.Text + "',PCChucVu=N'" + txt11.Text + "',PCapKhac=N'" + txt12.Text + "',Thuong=N'" + textBox1.Text + "',KyLuat='" + textBox2.Text + "',Thang=N'" + txt13.Text + "',Nam='" + txt14.Text + "',SoNgayCongThang=N'" + txt15.Text + "',SoNgayNghi=N'" + txt16.Text + "',SoGioLamThem=N'" + txt17.Text + "',Luong=N'" + txt52.Text + "',GhiChu='" + txt18.Text + "' where MaNV=N'" + cbbmnv2.Text + "'";
                 ck.thucthi(update);
                 ck.loaddg("select * from TblCongKhoiDieuHanh", dataGridView2);
-                MessageBox.Show("Sửa thành công");
+               
                 
             }
             catch(Exception f)

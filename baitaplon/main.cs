@@ -13,35 +13,13 @@ namespace baitaplon
 {
     public partial class main : Form
     {
-        SqlConnection cont;
-        string data;
-        string perm,tendn;
+        string data=Properties.Settings.Default.data;
+        string perm = Properties.Settings.Default.per;
         public main()
         {
             InitializeComponent();
         }
-        public void getdata(string text,string per,string ten)
-        {
-            tendn = ten;
-            perm = per;
-            data = text;
-            ketNoi();
-        }
-        void ketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Mở
-            if (cont.State == ConnectionState.Closed)
-                cont.Open();
-        }
-        void ngatketNoi()
-        {
-            cont = new SqlConnection(data);
-            // Đóng
-            if (cont.State == ConnectionState.Open)
-                cont.Close();
-        }
-
+      
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -64,9 +42,8 @@ namespace baitaplon
 
         private void bunifuTileButton1_Click(object sender, EventArgs e)
         {
-            
             danhmuclist l = new danhmuclist();
-            l.getdata(data,perm);
+          
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;
@@ -79,7 +56,7 @@ namespace baitaplon
         private void bunifuTileButton3_Click(object sender, EventArgs e)
         {
             chucnanglist l = new chucnanglist();
-            l.getdata(data,perm);
+
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;
@@ -90,7 +67,7 @@ namespace baitaplon
         private void bunifuTileButton4_Click(object sender, EventArgs e)
         {
             quanlylist l = new quanlylist();
-            l.getdata(data,perm);
+          
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;
@@ -105,7 +82,7 @@ namespace baitaplon
 
         private void main_Load(object sender, EventArgs e)
         {
-            label1.Text = tendn;
+            label1.Text = Properties.Settings.Default.id;
           
         }
 
@@ -118,12 +95,14 @@ namespace baitaplon
         {
             thongke k = new thongke();
             k.ShowDialog();
+         
         }
 
         private void bunifuTileButton5_Click(object sender, EventArgs e)
         {
             qltklist l = new qltklist();
-            l.getdata(data,perm,tendn);
+            MessageBox.Show(data + perm);
+            l.getdata(perm);
             pannelmenu.Controls.Clear();
             l.TopLevel = false;
             l.Dock = DockStyle.Fill;

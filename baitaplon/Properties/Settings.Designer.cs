@@ -58,5 +58,29 @@ namespace baitaplon.Properties {
                 this["check"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string data {
+            get {
+                return ((string)(this["data"]));
+            }
+            set {
+                this["data"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string per {
+            get {
+                return ((string)(this["per"]));
+            }
+            set {
+                this["per"] = value;
+            }
+        }
     }
 }

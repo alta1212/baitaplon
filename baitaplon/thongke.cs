@@ -12,6 +12,7 @@ namespace baitaplon
 {
     public partial class thongke : Form
     {
+        check ck = new check();
         public thongke()
         {
             InitializeComponent();
@@ -19,7 +20,9 @@ namespace baitaplon
 
         private void thongke_Load(object sender, EventArgs e)
         {
-           
+            ck.report();
+            crystalReportViewer1.ReportSource = crystalReportViewer1;
+            crystalReportViewer1.Refresh(); 
         }
     }
 }

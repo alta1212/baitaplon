@@ -46,7 +46,7 @@ namespace baitaplon
                     string insert = "insert into TblSoBH values(N'" + cbbmnv.Text + "',N'" + comboBox1.Text + "',N'" + txtmabh.Text + "',N'" + datengaycap.Text + "',N'" + txtnoicap.Text + "',N'" + txtghichu.Text + "')";
                     ck.thucthi(insert);
                     ck.loaddg("select * from TblSoBH", databaohiem);
-                    MessageBox.Show("Xong");
+              
 
                 }
                 catch
@@ -67,7 +67,7 @@ namespace baitaplon
                 string update = "update TblSoBH set masobh=N'" + txtmabh.Text + "' ,ngaycapso='" + datengaycap.Value + "' ,noicapso='" + txtnoicap.Text + "' ,ghichu='" + txtghichu.Text + "' where manv=N'" + cbbmnv.Text + "'";
                 ck.thucthi(update);
                 ck.loaddg("select * from TblSoBH", databaohiem);
-                MessageBox.Show("Xong");
+            
 
             }
             catch
@@ -145,7 +145,7 @@ namespace baitaplon
                 string insert = "insert into TblThaiSan values(N'" + txtmabp.Text + "',N'" + txtmaphong.Text + "',N'" + cbbmnv2.Text + "',N'" + txthoten.Text + "',N'" + datengaysinh.Text + "',N'" + datengayves.Text + "',N'" + datengayve.Text + "',N'" + datengaydilam.Text + "',N'" + txttrocapct.Text + "',N'" + txtghichu2.Text + "')";
                 ck.thucthi(insert);
                 ck.loaddg("select * from TblThaiSan", datathaisan);
-                MessageBox.Show("xong");
+           
 
             }
             catch
@@ -175,7 +175,7 @@ namespace baitaplon
                     string insert = "update TblThaiSan set mabophan=N'" + txtmabp.Text + "',maphong=N'" + txtmaphong.Text + "',hoten=N'" + txthoten.Text + "', ngaysinh='" + datengaysinh.Value + "' ,ngayvesom='" + datengayve.Value + "',ngaynghisinh='" + datengayve.Value + "',ngaydilam='" + datengaydilam.Value + "',trocapcongty='" + txtnoicap.Text + "',ghichu='" + txtghichu2.Text + "'";
                     ck.thucthi(insert);
                     ck.loaddg("select * from TblThaiSan", datathaisan);
-                    MessageBox.Show("xong");
+             
 
                 }
                 catch
@@ -192,7 +192,7 @@ namespace baitaplon
             string sql = "delete TblThaiSan where manv='" + cbbmnv.Text + "'";
             ck.thucthi(sql);
             ck.loaddg("select * from TblThaiSan", datathaisan);
-            MessageBox.Show("xong");
+            
 
         }
     }

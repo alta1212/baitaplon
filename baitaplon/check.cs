@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,13 +11,22 @@ using System.Windows.Forms;
 namespace baitaplon
 {
     class check
-    {
-        string data = "Data Source=(local);Initial Catalog=QLNS;Integrated Security=True";
+    { 
+        string data = Properties.Settings.Default.data;
         SqlConnection cont;
         SqlCommand comd;
         SqlDataReader read;
         DataTable dt;
         SqlDataAdapter adap;
+        string per= Properties.Settings.Default.per;
+
+
+        public void report()
+        {
+            ketNoi();
+
+            ngatketNoi();
+        }
         public void loadtextbox(TextBox cb, string sql,byte chiso)
         {
             ketNoi();
@@ -32,6 +42,7 @@ namespace baitaplon
 
        public void ketNoi()
         {
+           
             cont = new SqlConnection(data);
           
             // Mở
@@ -122,10 +133,19 @@ namespace baitaplon
         }
         public void thucthi(string sqlcode)
         {
-            ketNoi();
-            comd = new SqlCommand(sqlcode, cont);
-            comd.ExecuteNonQuery();
-            ngatketNoi();
+            if(per=="nguoidung")
+            {
+                MessageBox.Show("Bạn không có quyền thay đổi dữ liệu");
+            }   
+            else
+            {
+                ketNoi();
+                comd = new SqlCommand(sqlcode, cont);
+                comd.ExecuteNonQuery();
+                ngatketNoi();
+                MessageBox.Show("xong");
+            }    
+        
         }
     }
 }

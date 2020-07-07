@@ -12,14 +12,11 @@ namespace baitaplon
 {
     public partial class qltklist : Form
     {
-        string data;
-        string quyen;
-        string id;
-        public void getdata(string chuoi,string per,string tendn)
+        string quyen=" ";
+
+        public void getdata(string per)
         {
             quyen = per;
-            data = chuoi;
-            id = tendn;
         }
         public qltklist()
         {
@@ -28,6 +25,7 @@ namespace baitaplon
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+          
             if(quyen=="nguoidung")
             {
                 MessageBox.Show("Bạn đang đăng nhập với quyền người dùng,không thể quản lý tài khoản", "Quyền truy cập bị từ chối",
@@ -36,7 +34,7 @@ namespace baitaplon
             else
             {
             dangky d = new dangky();
-            d.getdata(data,quyen);
+            d.getdata("Data Source=(local);Initial Catalog=QLNS;Integrated Security=True", quyen);
             d.ShowDialog();
             }
            
@@ -45,7 +43,7 @@ namespace baitaplon
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             doipass l = new doipass();
-            l.getdata("Data Source=(local);Initial Catalog=QLNS;Integrated Security=True", id);
+            l.getdata("Data Source=(local);Initial Catalog=QLNS;Integrated Security=True", Properties.Settings.Default.id);
             l.ShowDialog();
                 
         }
